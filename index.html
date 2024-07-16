@@ -26,10 +26,33 @@
             margin: 0;
             font-size: 1.2em;
         }
-        header nav a {
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 24px;
+            height: 24px;
+        }
+        .hamburger div {
+            width: 24px;
+            height: 3px;
+            background-color: white;
+        }
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 50px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            width: 200px;
+            padding: 20px;
+        }
+        .nav-menu a {
             color: white;
             text-decoration: none;
-            margin-left: 15px;
+            margin-bottom: 10px;
         }
         .content {
             padding: 80px 20px 60px 20px;
@@ -37,10 +60,25 @@
         .section {
             margin-bottom: 40px;
         }
+        .section h2 {
+            font-size: 1.5em;
+        }
+        .section p {
+            font-size: 1.2em;
+        }
         .section img {
             max-width: 100%;
             display: block;
             margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            border: 1px solid white;
+            padding: 5px 10px;
+            font-size: 1em;
         }
         footer {
             position: fixed;
@@ -62,7 +100,12 @@
 <body>
     <header>
         <h1>Giovanni Foppiani</h1>
-        <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav-menu">
             <a href="#about">ABOUT</a>
             <a href="#works">WORKS</a>
             <a href="#research">RESEARCH</a>
@@ -73,8 +116,11 @@
         <div class="section" id="about">
             <h2>About</h2>
             <p>Through my design practice I collaborate with eco-social conscious brands, collectives and associations of the third sector to strengthen their communication potential.</p>
-            <p>By investigating the mutual relationships within different ecosystems, my research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.</p>
-            <p>2+ years work experience | 1+ years research experience</p>
+            <p>By investigating the mutual relationships between ecology, technology and social ecosystems, my research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.</p>
+            <div class="buttons">
+                <div class="button">2+ y WORK EXPERIENCE</div>
+                <div class="button">1+ y RESEARCH EXPERIENCE</div>
+            </div>
         </div>
         <div class="section" id="works">
             <h2>Works</h2>
@@ -104,5 +150,11 @@
             <a href="#contact">CONTACT</a>
         </nav>
     </footer>
+    <script>
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>

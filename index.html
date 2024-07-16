@@ -1,61 +1,108 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Giovanni Foppiani - designer</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="js/p5.min.js"></script>
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni Foppiani Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: black;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .content {
+            padding: 80px 20px 60px 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section img {
+            max-width: 100%;
+            display: block;
+            margin: 20px 0;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+        footer nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
     <header>
-      <nav>
-        <a href="#">Giovanni Foppiani</a>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-        <button class="cta" onclick="myFunction()">Switch mode</button>
-      </nav>
+        <h1>Giovanni Foppiani</h1>
+        <nav>
+            <a href="#about">ABOUT</a>
+            <a href="#works">WORKS</a>
+            <a href="#research">RESEARCH</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
     </header>
-    <main>
-      <script src="js/sketch.js" type="text/javascript"></script>
-      <section> <h1>Hi, my name is Giovanni Foppiani</h1></section>
-      <section id="about">
-        <h2>About me</h2>
-        <p>I am a communication designer with particular focus in digital sustainability.</p>
-      </section>
-      <section id="services">
-        <h2>My Services</h2>
-        <p>- Sustainable web design</p>
-        <p>- Communication strategies</p>
-        <p>- Graphic design</p>
-
-      </section>
-  
-
-        <section id="sustainable">
-          <h2>Sustainability</h2>
-
-        <p>According to Ecograder this website emits 0.435gr of C02 per view, which is 10 times less than sending an email.</p>
-        </section>
-
-        <!-- <section id="contact">
-        <h2>Contact </h2>
-        <p>Email: foppianigiovanni@gmail.com</p>
-        <p>Phone: +39 339 77 64 941</p>
-        <p>Address: Via Slataper 8, Firenze</p>
-      </section> -->
-
-
-
-      <script>
-      function myFunction() {
-         var element = document.body;
-         element.classList.toggle("dark-mode");
-      }
-      </script>
-
-    </main>
+    <div class="content">
+        <div class="section" id="about">
+            <h2>About</h2>
+            <p>Through my design practice I collaborate with eco-social conscious brands, collectives and associations of the third sector to strengthen their communication potential.</p>
+            <p>By investigating the mutual relationships within different ecosystems, my research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.</p>
+            <p>2+ years work experience | 1+ years research experience</p>
+        </div>
+        <div class="section" id="works">
+            <h2>Works</h2>
+            <p>Branding, web-design, UX/UI, service, graphic design, eco-social studies</p>
+            <img src="path_to_your_image" alt="[coming soon] WEB ECOSYSTEM MODEL FOR THE THIRD SECTOR">
+            <img src="path_to_your_image" alt="[2023] CRITICITY">
+            <img src="path_to_your_image" alt="[2023] THE IMPACT OF THE INTERNET">
+            <img src="path_to_your_image" alt="[2023] URBAN PARASITISM">
+            <img src="path_to_your_image" alt="[2021] THE TEXTILE RECYCLE INDUSTRY">
+            <img src="path_to_your_image" alt="[2021] STUDENT EXHIBITION IDENTITY">
+            <img src="path_to_your_image" alt="[2019] THERE IS NO PLAN BEE">
+            <img src="path_to_your_image" alt="[2019] BAUHAUS 100 POSTER">
+        </div>
+        <div class="section" id="contact">
+            <h2>Contact</h2>
+            <p>Giovanni Foppiani, visual designer & researcher</p>
+            <p>Researcher assistant at IUAV, active member at Criticity</p>
+            <p>Through my design practice I collaborate with eco-social conscious brands, collectives and associations of the third sector to strengthen their communication potential.</p>
+            <p>Instagram | LinkedIn</p>
+        </div>
+    </div>
     <footer>
-      <p>Copyleft 2024 - Giovanni Foppiani</p>
+        <nav>
+            <a href="#about">ABOUT</a>
+            <a href="#works">WORKS</a>
+            <a href="#research">RESEARCH</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
     </footer>
-  </body>
+</body>
 </html>

@@ -3,80 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Giovanni Foppiani &#8211; portfolio</title>
+    <title>Giovanni Foppiani &#8211; Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-        body {
-            background-color: #1C1C1C;
-            color: #D9D9D9;
-            font-family: Arial, sans-serif;
-        }
-        header, footer {
-            background-color: #1C1C1C;
-        }
-        .filter-select {
-            cursor: pointer;
-            text-decoration: underline;
-            margin-right: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border-top: 1px solid #D9D9D9;
-            text-align: left;
-        }
-        @media (max-width: 600px) {
-            th, td { display: none; }
-            td:nth-child(2), td:last-child { display: table-cell; }
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="site-branding">
-            <h1><a href="#/">Giovanni Foppiani &#8211; visual designer & researcher</a></h1>
+            <h1><a href="#">Giovanni Foppiani &#8211; Visual Designer & Researcher</a></h1>
         </div>
     </header>
 
-    <section id="about" style="background-color: #1C1C1C; color: #D9D9D9; padding: 40px 20px; text-align: center; font-family: Arial, sans-serif;">
-    <h2 style="text-transform: uppercase; font-size: 24px; margin-bottom: 20px; color: #31FC3C;">About</h2>
-    <p style="font-size: 18px; line-height: 1.5; margin-bottom: 20px;">
-        Through my design practice, I collaborate with eco-social conscious brands, collectives, and associations of the third sector to strengthen their communication potential.
-    </p>
-    <p style="font-size: 14px; color: #A9A9A9; line-height: 1.6;">
-        By investigating the mutual relationships between ecology, technology, and social ecosystems, my research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.
-    </p>
-</section>
+    <section id="about">
+        <h2>About</h2>
+        <p class="highlight">
+            Through branding, graphic, web, UX, and service design, I help brands, associations, institutions, and artists &mdash; which add value to the planet, people, and art &mdash; to strengthen their communication potential.
+        </p>
+        <div class="columns">
+            <p>
+                Along my design practice, I experimented with a large variety of media, from analogue to digital, from traditional printed forms to animated designs. In my opinion, each medium is a design object that must emphasize its unique characteristics.
+            </p>
+            <p>
+                Over the past years, I had the chance to travel and work in different European countries. Collaborating with diverse professionals allowed me to explore how impactful design can be for humans, society, and the planet.
+            </p>
+        </div>
+    </section>
+
     <main>
         <h1>Archivio</h1>
-        <div id="box">
+        <div id="filter">
             <div class="filter-select" onclick="filterTable('All', 2)">All Categories</div>
             <div class="filter-select" onclick="filterTable('Research', 2)">Research</div>
-            <div class="filter-select" onclick="filterTable('Lecture', 2)">Graphic design</div>
-              <div class="filter-select" onclick="filterTable('Research', 2)">Workshop</div>
-            <div class="filter-select" onclick="filterTable('Lecture', 2)">Pubblicazioni</div>
+            <div class="filter-select" onclick="filterTable('Graphic Design', 2)">Graphic Design</div>
+            <div class="filter-select" onclick="filterTable('Workshop', 2)">Workshop</div>
+            <div class="filter-select" onclick="filterTable('Publications', 2)">Publications</div>
         </div>
         <table>
             <tr class="clickable">
                 <td>2024</td>
                 <td><a href="#">WEB ECOSYSTEM MODEL FOR THE THIRD SECTOR IN THE VENETIAN TERRITORY</a></td>
-                <td>Map design</td>
+                <td>Map Design</td>
                 <td>...</td>
                 <td>Venezia</td>
             </tr>
-            <!-- Add other rows as needed -->
-              <tr class="clickable">
+            <tr class="clickable">
                 <td>2024</td>
                 <td><a href="#">Cartografia dei servizi Iuav</a></td>
-                <td>Map design</td>
+                <td>Map Design</td>
                 <td>...</td>
                 <td>Venezia</td>
             </tr>
         </table>
     </main>
+
     <footer>
         <p>&copy; 2024 CRITICITY. Designed for sustainability.</p>
     </footer>

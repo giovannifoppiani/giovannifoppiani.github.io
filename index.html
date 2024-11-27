@@ -21,155 +21,78 @@
             padding: 20px;
         }
 
-        /* Section Styling */
-        .about-section {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .about-section img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .about-section .title {
-            font-size: 14px;
-            font-weight: normal;
-            color: #bbbbbb;
-            margin-bottom: 10px;
-        }
-
-        .about-section .subtitle {
-            font-size: 14px;
-            font-weight: normal;
-            color: #bbbbbb;
-            margin-bottom: 30px;
-        }
-
-        .about-section .heading {
-            font-size: 10px;
-            font-weight: bold;
-            color: #bbbbbb;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .about-section .lead-text {
-            font-size: 24px;
-            line-height: 1;
-            font-weight: normal;
-            margin-bottom: 15px;
-        }
-
-        .about-section hr {
-            border: 0.5px solid #444444;
-            margin: 20px 0;
-        }
-
-        .about-section .description {
-            font-size: 14px;
-            font-weight: 300;
-            line-height: 1.6;
-            color: #bbbbbb;
-        }
-
         /* Navbar Styling */
-.navbar {
-    background-color: #000000;
-    padding: 15px 20px;
-    text-align: left;
-}
-
-.navbar .nav-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.navbar ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    list-style: none;
-}
-
-.navbar a {
-    font-size: 14px;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0 5px;
-    transition: color 0.3s ease;
-}
-
-.navbar .active a {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.navbar a:hover {
-    color: #bbbbbb;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .navbar a {
-        font-size: 12px;
-    }
-}
-
-        /* Table Styling */
-        .table-container {
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
             text-align: left;
         }
 
-        thead th {
-            padding: 10px 5px;
+        .navbar .nav-title {
             font-size: 14px;
             font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            list-style: none;
+        }
+
+        .navbar a {
+            font-size: 14px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 5px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .active a {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
             color: #bbbbbb;
-            border-bottom: 1px solid #444444;
         }
 
-        tbody td {
-            padding: 10px 5px;
-            border-bottom: 1px solid #444444;
-        }
-
-        tbody tr:hover {
-            background-color: #222222;
+        /* Page Weight Indicator Styling */
+        .page-weight-indicator {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-size: 12px;
+            padding: 10px 15px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            border-top: 1px solid #444444;
+            width: 100%;
+            text-align: left;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            table {
-                font-size: 12px;
+            .navbar ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                overflow-x: auto;
+                gap: 10px;
             }
 
-            thead th:nth-child(3),
-            thead th:nth-child(4),
-            tbody td:nth-child(3),
-            tbody td:nth-child(4) {
-                display: none;
+            .navbar a {
+                font-size: 12px;
             }
         }
     </style>
@@ -178,7 +101,7 @@
     <!-- About Section -->
     <div class="about-section">
         <p class="title">Giovanni Foppiani</p>
-        <p class="title">Visual designer & researcher</p>
+        <p class="subtitle">Visual designer & researcher</p>
         <hr>
         <p class="heading">About</p>
         <p class="lead-text">
@@ -192,6 +115,7 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
+        <p class="nav-title">↓ Projects</p>
         <ul>
             <li class="active" data-filter="all"><a href="#">All</a></li>
             <li data-filter="Editorial"><a href="#">Editorial</a></li>
@@ -217,7 +141,7 @@
             <tbody>
                 <tr data-category="Publications">
                     <td>2025</td>
-                    <td>Amplify Sociali Initiatives</td>
+                    <td>Amplify Social Initiatives</td>
                     <td>Publication</td>
                     <td>ISSTEC, Iuav Venezia</td>
                 </tr>
@@ -227,159 +151,36 @@
                     <td>Photography</td>
                     <td>Emma Zerial, elsewhere</td>
                 </tr>
-                <tr data-category="Publications">
-                    <td>2025</td>
-                    <td>Low tech solution for collective resilience</td>
-                    <td>Publication</td>
-                    <td>Carmelo Leonardi, RF</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2025</td>
-                    <td>Design for survival: Social innovation</td>
-                    <td>Publication</td>
-                    <td>ISSTEC, Iuav Venezia</td>
-                </tr>
-                <tr data-category="Research">
-                    <td>2024</td>
-                    <td>PUBLIC FUTURES. DATA , RIGHTS, DESIGN.</td>
-                    <td>Research, Editorial</td>
-                    <td>Gianni Sinni, Irene Sgarro</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2024</td>
-                    <td>Arcipelaghi digitali. Cartografia servizi Iuav</td>
-                    <td>Publication</td>
-                    <td>Gianni Sinni</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2024</td>
-                    <td>Nessi. Appunti per ecosistema uni (EDU)</td>
-                    <td>Editorial</td>
-                    <td>Gianni Sinni, Irene Sgarro</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2024</td>
-                    <td>Eart-rosion: satellite views are point of views</td>
-                    <td>Publication</td>
-                    <td>Emma Zerial</td>
-                </tr>
-                <tr data-category="Research, Workshop">
-                    <td>2024</td>
-                    <td>Design per l’emergenza: low tech e cambiam...</td>
-                    <td>Research, Workshop</td>
-                    <td>Carmel Leonardi, Crticity</td>
-                </tr>
-                <tr data-category="Digital, Workshop">
-                    <td>2024</td>
-                    <td>Modello web per imprese sociali</td>
-                    <td>Research, Digital, Workshop</td>
-                    <td>Iuav Venezia</td>
-                </tr>
-                <tr data-category="Workshop">
-                    <td>2024</td>
-                    <td>Waste driven UI -> Ctrl+Junk lab</td>
-                    <td>Research, Workshop</td>
-                    <td>CTRL+JUNK LAB, Iuav</td>
-                </tr>
-                <tr data-category="Workshop">
-                    <td>2024</td>
-                    <td>Comunicare la sostenibilità in modo non con...</td>
-                    <td>Workshop</td>
-                    <td>Fondazione Iuav, Studio V...</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2024</td>
-                    <td>Sustainable platform for collective Criticity</td>
-                    <td>Digital</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Research, Editorial">
-                    <td>2023</td>
-                    <td>The impact of the internet</td>
-                    <td>Research, Editorial</td>
-                    <td>-</td>
-                </tr>
-                <tr data-category="Workshop">
-                    <td>2023</td>
-                    <td>Corte te</td>
-                    <td>Workshop</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Workshop">
-                    <td>2023</td>
-                    <td>Urban parassitism</td>
-                    <td>Workshop</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Digital, Photography">
-                    <td>2022</td>
-                    <td>elsewhere</td>
-                    <td>Digital, Photography</td>
-                    <td>-</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2022</td>
-                    <td>Knitwear Lab: Thijs Verhaar.nl</td>
-                    <td>Digital</td>
-                    <td>Knitwear Lab, Thijs Verhaar</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2021</td>
-                    <td>Opening video ISIA Firenze homepage</td>
-                    <td>Digital</td>
-                    <td>ISIA Firenze</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2021</td>
-                    <td>Flexible Visual Identity: ISIA Student Show</td>
-                    <td>Digital</td>
-                    <td>ISIA Firenze</td>
-                </tr>
-                <tr data-category="Service">
-                    <td>2021</td>
-                    <td>Reduce plastic waste</td>
-                    <td>Service</td>
-                    <td>Alia Toscana, ISIA Firenze</td>
-                </tr>
-                <tr data-category="Digital, Photography">
-                    <td>2020</td>
-                    <td>Recycling textile district</td>
-                    <td>Digital, Photography</td>
-                    <td>Rifò-Lab</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2020</td>
-                    <td>NO Black Friday</td>
-                    <td>Digital</td>
-                    <td>Rifò-Lab</td>
-                </tr>
-                <tr data-category="Digital, Photography">
-                    <td>2020</td>
-                    <td>Recycled clothes</td>
-                    <td>Digital, Photography</td>
-                    <td>Rifò-Lab, Museo del tessuto</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2020</td>
-                    <td>Etichetta trasparente</td>
-                    <td>Digital, Editorial</td>
-                    <td>Oxfam Italia</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2020</td>
-                    <td>There is no plan bee</td>
-                    <td>Editorial</td>
-                    <td>Fondazione Eni Enrico Mat...</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2020</td>
-                    <td>Bauhaus100</td>
-                    <td>Editorial</td>
-                    <td>ISIA Firenze</td>
-                </tr>
-                <!-- Add remaining projects -->
+                <!-- Add remaining projects here -->
             </tbody>
         </table>
     </div>
+
+    <!-- Page Weight Indicator -->
+    <div class="page-weight-indicator">
+        <p>Page Weight: <span id="page-weight">Calculating...</span></p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let totalSize = 0;
+
+            // Fetch all resources currently loaded
+            performance.getEntriesByType("resource").forEach((resource) => {
+                totalSize += resource.transferSize; // Sum up transfer sizes
+            });
+
+            // Format the size to KB or MB
+            const formatSize = (size) => {
+                return size >= 1048576
+                    ? (size / 1048576).toFixed(2) + " MB"
+                    : (size / 1024).toFixed(2) + " KB";
+            };
+
+            // Update the page weight indicator
+            document.getElementById("page-weight").textContent = formatSize(totalSize);
+        });
+    </script>
 </body>
 </html>

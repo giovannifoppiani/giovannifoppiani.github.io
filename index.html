@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project List</title>
+    <title>Giovanni Foppiani</title>
     <style>
         /* General Reset */
         body, ul, li, table, th, td {
@@ -21,12 +21,66 @@
             padding: 20px;
         }
 
+        /* Section Styling */
+        .about-section {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .about-section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .about-section .title {
+            font-size: 14px;
+            font-weight: normal;
+            color: #bbbbbb;
+            margin-bottom: 10px;
+        }
+
+        .about-section .subtitle {
+            font-size: 14px;
+            font-weight: normal;
+            color: #bbbbbb;
+            margin-bottom: 30px;
+        }
+
+        .about-section .heading {
+            font-size: 10px;
+            font-weight: bold;
+            color: #bbbbbb;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .about-section .lead-text {
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .about-section hr {
+            border: 0.5px solid #444444;
+            margin: 20px 0;
+        }
+
+        .about-section .description {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #bbbbbb;
+        }
+
         /* Navbar Styling */
         .navbar {
             background-color: #1a1a1a;
             padding: 10px;
             text-align: center;
-            overflow-x: auto; /* Prevent overflow */
+            overflow-x: auto;
         }
 
         .navbar ul {
@@ -83,12 +137,8 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .navbar ul {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                overflow-x: auto;
-                gap: 10px;
+            table {
+                font-size: 12px;
             }
 
             thead th:nth-child(3),
@@ -97,14 +147,26 @@
             tbody td:nth-child(4) {
                 display: none;
             }
-
-            table {
-                font-size: 12px;
-            }
         }
     </style>
 </head>
 <body>
+    <!-- About Section -->
+    <div class="about-section">
+        <p class="title">Giovanni Foppiani</p>
+        <p class="subtitle">Visual designer & researcher</p>
+        <hr>
+        <p class="heading">About</p>
+        <p class="lead-text">
+            Through my design practice, I collaborate with eco-social conscious brands, collectives, and associations of the third sector to strengthen their communication potential.
+        </p>
+        <hr>
+        <p class="description">
+            By investigating the mutual relationships between ecology, technology, and social ecosystems, my research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.
+        </p>
+    </div>
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
             <li class="active" data-filter="all"><a href="#">All</a></li>
@@ -117,6 +179,7 @@
         </ul>
     </nav>
 
+    <!-- Table Section -->
     <div class="table-container">
         <table>
             <thead>
@@ -128,7 +191,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Full List of Projects -->
                 <tr data-category="Publications">
                     <td>2025</td>
                     <td>Amplify Sociali Initiatives</td>
@@ -291,33 +353,9 @@
                     <td>Editorial</td>
                     <td>ISIA Firenze</td>
                 </tr>
+                <!-- Add remaining projects -->
             </tbody>
         </table>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navItems = document.querySelectorAll(".navbar ul li");
-            const rows = document.querySelectorAll("tbody tr");
-
-            navItems.forEach(item => {
-                item.addEventListener("click", () => {
-                    navItems.forEach(nav => nav.classList.remove("active"));
-                    item.classList.add("active");
-
-                    const filter = item.getAttribute("data-filter");
-
-                    rows.forEach(row => {
-                        const categories = row.getAttribute("data-category").split(", ");
-                        if (filter === "all" || categories.includes(filter)) {
-                            row.style.display = "table-row";
-                        } else {
-                            row.style.display = "none";
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

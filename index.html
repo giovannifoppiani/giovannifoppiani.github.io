@@ -1,50 +1,84 @@
 <!DOCTYPE html>
-<html lang="it-IT">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Giovanni Foppiani &#8211; Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni Foppiani – visual designer and researcher</title>
+    <link rel="stylesheet" href="style_exact.css">
 </head>
 <body>
-    <header>
-        <div class="site-branding">
-            <h1>Giovanni Foppiani</h1>
-            <p>Visual Designer & Researcher</p>
-        </div>
-    </header>
-
-    <section id="about">
-        <h2>About</h2>
-        <p class="highlight">
-            Through branding, graphic, web, UX, and service design, I help brands, associations, institutions, and artists &mdash; which add value to the planet, people, and art &mdash; to strengthen their communication potential.
-        </p>
-        <div class="columns">
-            <p>
-                Along my design practice, I experimented with a variety of media, from analogue to digital ones. Each medium must emphasize its unique characteristics.
-            </p>
-            <p>
-                Over the past years, I had the chance to travel and collaborate with diverse professionals, exploring how impactful design can be for society and the planet.
-            </p>
-        </div>
-    </section>
-
-    <main>
-        <h1>Archivio</h1>
+    <nav class="navbar">
+        <ul>
+            <li class="active" data-filter="all"><a href="#">All</a></li>
+            <li data-filter="Editorial"><a href="#">Editorial</a></li>
+            <li data-filter="Digital"><a href="#">Digital</a></li>
+            <li data-filter="Research"><a href="#">Research</a></li>
+            <li data-filter="Workshop"><a href="#">Workshop</a></li>
+            <li data-filter="Publications"><a href="#">Publications</a></li>
+            <li data-filter="Photography"><a href="#">Photography</a></li>
+        </ul>
+    </nav>
+    <div class="table-container">
         <table>
-            <tr class="clickable">
-                <td>2024</td>
-                <td><a href="#">Web Ecosystem Model for the Third Sector</a></td>
-            </tr>
-            <tr class="clickable">
-                <td>2024</td>
-                <td><a href="#">Cartografia dei servizi Iuav</a></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th class="year">Year</th>
+                    <th class="title">Title</th>
+                    <th class="type">Type</th>
+                    <th class="collaboration">Collaboration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example rows -->
+                <tr data-category="Publications">
+                    <td>2025</td>
+                    <td><a href="#">Amplify Social Initiatives</a></td>
+                    <td>Publication</td>
+                    <td>ISSTEC, Iuav Venezia</td>
+                </tr>
+                <tr data-category="Photography">
+                    <td>2025</td>
+                    <td><a href="#">Top-down Larderello</a></td>
+                    <td>Photography</td>
+                    <td>Emma Zerial, elsewhere</td>
+                </tr>
+                <tr data-category="Digital">
+                    <td>2024</td>
+                    <td><a href="#">Sustainable platform for collective Criticity</a></td>
+                    <td>Digital</td>
+                    <td>Criticity</td>
+                </tr>
+                <!-- Add all other rows similarly -->
+            </tbody>
         </table>
-    </main>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Giovanni Foppiani</p>
-    </footer>
+    <!-- JavaScript goes here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navItems = document.querySelectorAll(".navbar ul li");
+            const rows = document.querySelectorAll("tbody tr");
+
+            navItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    // Remove active class from all nav items
+                    navItems.forEach(nav => nav.classList.remove("active"));
+                    item.classList.add("active");
+
+                    const filter = item.getAttribute("data-filter");
+
+                    rows.forEach(row => {
+                        const category = row.getAttribute("data-category");
+
+                        if (filter === "all" || category.includes(filter)) {
+                            row.style.display = "table-row"; // Keeps the grid intact
+                        } else {
+                            row.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -62,9 +62,43 @@ body {
     margin: 10px auto;
 }
 
+/* Navbar Styling */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navbar li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar .active a {
+    background-color: #333333;
+}
+
 /* Table Styling */
 .table-container {
     margin-top: 20px;
+    overflow-x: auto;
 }
 
 table {
@@ -97,47 +131,24 @@ tbody td {
     color: #ffffff;
 }
 
-tbody td a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-tbody td a:hover {
-    text-decoration: underline;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* About Section for Mobile */
-    .about-section {
-        align-items: flex-start;
-        text-align: left;
+    /* Navigation Bar in Line */
+    .navbar ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
     }
 
-    .about-section img {
-        width: 100%;
-        margin-bottom: 10px;
+    /* Table - Show Only Year and Title */
+    thead th:nth-child(3),
+    thead th:nth-child(4),
+    tbody td:nth-child(3),
+    tbody td:nth-child(4) {
+        display: none;
     }
 
-    .about-section h1 {
-        font-size: 22px;
-        margin-bottom: 5px;
-    }
-
-    .about-section h2 {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    .about-section p {
-        font-size: 13px;
-    }
-
-    .about-section p.lead {
-        font-size: 14px;
-    }
-
-    /* Table for Mobile */
     table {
         font-size: 12px;
     }

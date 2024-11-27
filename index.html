@@ -6,7 +6,7 @@
     <title>Project List</title>
     <style>
         /* General Reset */
-        body, ul, li, table, th, td, p, h1, h2, h3, h4 {
+        body, ul, li, table, th, td {
             margin: 0;
             padding: 0;
             list-style: none;
@@ -21,82 +21,36 @@
             padding: 20px;
         }
 
-        /* About Section Styling */
-        .about-section {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .about-section img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .about-section h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .about-section h2 {
-            font-size: 16px;
-            font-weight: 300;
-            margin-bottom: 15px;
-            color: #bbbbbb;
-        }
-
-        .about-section p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .about-section p.lead {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .about-section hr {
-            width: 50%;
-            border: 0.5px solid #444444;
-            margin: 10px auto;
-        }
-
         /* Navbar Styling */
         .navbar {
             background-color: #1a1a1a;
-            padding: 10px 15px;
+            padding: 10px;
             text-align: center;
+            overflow-x: auto; /* Prevent overflow */
         }
 
         .navbar ul {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .navbar li {
-            display: inline-block;
             cursor: pointer;
         }
 
         .navbar a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 14px;
             padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .navbar a:hover,
-        .navbar .active a {
-            background-color: #333333;
+        .navbar .active a,
+        .navbar a:hover {
+            background-color: #444444;
         }
 
         /* Table Styling */
@@ -108,30 +62,23 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 14px;
         }
 
         thead th {
-            font-weight: 400;
+            padding: 10px 5px;
             font-size: 14px;
-            padding-bottom: 5px;
+            font-weight: bold;
             color: #bbbbbb;
             border-bottom: 1px solid #444444;
-            text-transform: capitalize;
-        }
-
-        tbody tr {
-            padding: 10px 0;
-            border-bottom: 1px solid #444444;
-        }
-
-        tbody tr:hover {
-            background-color: #1a1a1a;
         }
 
         tbody td {
             padding: 10px 5px;
-            color: #ffffff;
+            border-bottom: 1px solid #444444;
+        }
+
+        tbody tr:hover {
+            background-color: #222222;
         }
 
         /* Responsive Design */
@@ -139,8 +86,9 @@
             .navbar ul {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: nowrap;
                 justify-content: space-around;
+                overflow-x: auto;
+                gap: 10px;
             }
 
             thead th:nth-child(3),
@@ -153,26 +101,10 @@
             table {
                 font-size: 12px;
             }
-
-            thead th, tbody td {
-                padding: 8px 5px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="about-section">
-        <h1>Giovanni Foppiani</h1>
-        <h2>Visual Designer & Researcher</h2>
-        <p class="lead">
-            Through my design practice, I collaborate with eco-social conscious brands, collectives, and associations of the third sector to strengthen their communication potential.
-        </p>
-        <hr>
-        <p>
-            By investigating the mutual relationships between ecology, technology, and social ecosystems, my research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.
-        </p>
-    </div>
-
     <nav class="navbar">
         <ul>
             <li class="active" data-filter="all"><a href="#">All</a></li>
@@ -196,9 +128,10 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Full List of Projects -->
                 <tr data-category="Publications">
                     <td>2025</td>
-                    <td>Amplify Social Initiatives</td>
+                    <td>Amplify Sociali Initiatives</td>
                     <td>Publication</td>
                     <td>ISSTEC, Iuav Venezia</td>
                 </tr>
@@ -222,11 +155,142 @@
                 </tr>
                 <tr data-category="Research">
                     <td>2024</td>
-                    <td>Public futures: data, rights, design</td>
+                    <td>PUBLIC FUTURES. DATA , RIGHTS, DESIGN.</td>
                     <td>Research, Editorial</td>
                     <td>Gianni Sinni, Irene Sgarro</td>
                 </tr>
-                <!-- Continue with the complete list of projects -->
+                <tr data-category="Publications">
+                    <td>2024</td>
+                    <td>Arcipelaghi digitali. Cartografia servizi Iuav</td>
+                    <td>Publication</td>
+                    <td>Gianni Sinni</td>
+                </tr>
+                <tr data-category="Editorial">
+                    <td>2024</td>
+                    <td>Nessi. Appunti per ecosistema uni (EDU)</td>
+                    <td>Editorial</td>
+                    <td>Gianni Sinni, Irene Sgarro</td>
+                </tr>
+                <tr data-category="Publications">
+                    <td>2024</td>
+                    <td>Eart-rosion: satellite views are point of views</td>
+                    <td>Publication</td>
+                    <td>Emma Zerial</td>
+                </tr>
+                <tr data-category="Research, Workshop">
+                    <td>2024</td>
+                    <td>Design per l’emergenza: low tech e cambiam...</td>
+                    <td>Research, Workshop</td>
+                    <td>Carmel Leonardi, Crticity</td>
+                </tr>
+                <tr data-category="Digital, Workshop">
+                    <td>2024</td>
+                    <td>Modello web per imprese sociali</td>
+                    <td>Research, Digital, Workshop</td>
+                    <td>Iuav Venezia</td>
+                </tr>
+                <tr data-category="Workshop">
+                    <td>2024</td>
+                    <td>Waste driven UI -> Ctrl+Junk lab</td>
+                    <td>Research, Workshop</td>
+                    <td>CTRL+JUNK LAB, Iuav</td>
+                </tr>
+                <tr data-category="Workshop">
+                    <td>2024</td>
+                    <td>Comunicare la sostenibilità in modo non con...</td>
+                    <td>Workshop</td>
+                    <td>Fondazione Iuav, Studio V...</td>
+                </tr>
+                <tr data-category="Digital">
+                    <td>2024</td>
+                    <td>Sustainable platform for collective Criticity</td>
+                    <td>Digital</td>
+                    <td>Criticity</td>
+                </tr>
+                <tr data-category="Research, Editorial">
+                    <td>2023</td>
+                    <td>The impact of the internet</td>
+                    <td>Research, Editorial</td>
+                    <td>-</td>
+                </tr>
+                <tr data-category="Workshop">
+                    <td>2023</td>
+                    <td>Corte te</td>
+                    <td>Workshop</td>
+                    <td>Criticity</td>
+                </tr>
+                <tr data-category="Workshop">
+                    <td>2023</td>
+                    <td>Urban parassitism</td>
+                    <td>Workshop</td>
+                    <td>Criticity</td>
+                </tr>
+                <tr data-category="Digital, Photography">
+                    <td>2022</td>
+                    <td>elsewhere</td>
+                    <td>Digital, Photography</td>
+                    <td>-</td>
+                </tr>
+                <tr data-category="Digital">
+                    <td>2022</td>
+                    <td>Knitwear Lab: Thijs Verhaar.nl</td>
+                    <td>Digital</td>
+                    <td>Knitwear Lab, Thijs Verhaar</td>
+                </tr>
+                <tr data-category="Digital">
+                    <td>2021</td>
+                    <td>Opening video ISIA Firenze homepage</td>
+                    <td>Digital</td>
+                    <td>ISIA Firenze</td>
+                </tr>
+                <tr data-category="Digital">
+                    <td>2021</td>
+                    <td>Flexible Visual Identity: ISIA Student Show</td>
+                    <td>Digital</td>
+                    <td>ISIA Firenze</td>
+                </tr>
+                <tr data-category="Service">
+                    <td>2021</td>
+                    <td>Reduce plastic waste</td>
+                    <td>Service</td>
+                    <td>Alia Toscana, ISIA Firenze</td>
+                </tr>
+                <tr data-category="Digital, Photography">
+                    <td>2020</td>
+                    <td>Recycling textile district</td>
+                    <td>Digital, Photography</td>
+                    <td>Rifò-Lab</td>
+                </tr>
+                <tr data-category="Digital">
+                    <td>2020</td>
+                    <td>NO Black Friday</td>
+                    <td>Digital</td>
+                    <td>Rifò-Lab</td>
+                </tr>
+                <tr data-category="Digital, Photography">
+                    <td>2020</td>
+                    <td>Recycled clothes</td>
+                    <td>Digital, Photography</td>
+                    <td>Rifò-Lab, Museo del tessuto</td>
+                </tr>
+                <tr data-category="Editorial">
+                    <td>2020</td>
+                    <td>Etichetta trasparente</td>
+                    <td>Digital, Editorial</td>
+                    <td>Oxfam Italia</td>
+                </tr>
+                <tr data-category="Editorial">
+                    <td>2020</td>
+                    <td>There is no plan bee</td>
+                    <td>Editorial</td>
+                    <td>Fondazione Eni Enrico Mat...</td>
+                </tr>
+                <tr data-category="Editorial">
+                    <td>2020</td>
+                    <td>Bauhaus100</td>
+                    <td>Editorial</td>
+                    <td>ISIA Firenze</td>
+                </tr>
             </tbody>
         </table>
     </div>

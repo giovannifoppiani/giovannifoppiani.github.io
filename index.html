@@ -3,14 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Project List</title>
+    <style>
+        /* General Reset */
+        body, ul, li, table, th, td, p, h1, h2, h3, h4 {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        /* About Section Styling */
+        .about-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .about-section h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .about-section h2 {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #bbbbbb;
+        }
+
+        .about-section p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .about-section p.lead {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-section hr {
+            width: 50%;
+            border: 0.5px solid #444444;
+            margin: 10px auto;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #1a1a1a;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .navbar li {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover,
+        .navbar .active a {
+            background-color: #333333;
+        }
+
+        /* Table Styling */
+        .table-container {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        thead th {
+            font-weight: 400;
+            font-size: 14px;
+            padding-bottom: 5px;
+            color: #bbbbbb;
+            border-bottom: 1px solid #444444;
+            text-transform: capitalize;
+        }
+
+        tbody tr {
+            padding: 10px 0;
+            border-bottom: 1px solid #444444;
+        }
+
+        tbody tr:hover {
+            background-color: #1a1a1a;
+        }
+
+        tbody td {
+            padding: 10px 5px;
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+            }
+
+            thead th:nth-child(3),
+            thead th:nth-child(4),
+            tbody td:nth-child(3),
+            tbody td:nth-child(4) {
+                display: none;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            thead th, tbody td {
+                padding: 8px 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="about-section">
-        <img src="path-to-your-image.jpg" alt="Background or Profile Image">
         <h1>Giovanni Foppiani</h1>
-        <h2>Visual Designer & researcher</h2>
+        <h2>Visual Designer & Researcher</h2>
         <p class="lead">
             Through my design practice, I collaborate with eco-social conscious brands, collectives, and associations of the third sector to strengthen their communication potential.
         </p>
@@ -43,7 +196,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Full List of Projects -->
                 <tr data-category="Publications">
                     <td>2025</td>
                     <td>Amplify Social Initiatives</td>
@@ -74,43 +226,7 @@
                     <td>Research, Editorial</td>
                     <td>Gianni Sinni, Irene Sgarro</td>
                 </tr>
-                <tr data-category="Publications">
-                    <td>2024</td>
-                    <td>Arcipelaghi digitali. Cartografia servizi Iuav</td>
-                    <td>Publication</td>
-                    <td>Gianni Sinni</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2024</td>
-                    <td>Nessi. Appunti per ecosistema uni (EDU)</td>
-                    <td>Editorial</td>
-                    <td>Gianni Sinni, Irene Sgarro</td>
-                </tr>
-                <tr data-category="Research">
-                    <td>2024</td>
-                    <td>Design per l’emergenza: low tech e cambiam...</td>
-                    <td>Research, Workshop</td>
-                    <td>Carmel Leonardi, Criticity</td>
-                </tr>
-                <tr data-category="Workshop">
-                    <td>2023</td>
-                    <td>Corte te</td>
-                    <td>Workshop</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2024</td>
-                    <td>Sustainable platform for collective Criticity</td>
-                    <td>Digital</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2022</td>
-                    <td>elsewhere</td>
-                    <td>Digital, Photography</td>
-                    <td>-</td>
-                </tr>
-                <!-- Add the remaining rows here -->
+                <!-- Continue with the complete list of projects -->
             </tbody>
         </table>
     </div>
@@ -128,9 +244,8 @@
                     const filter = item.getAttribute("data-filter");
 
                     rows.forEach(row => {
-                        const category = row.getAttribute("data-category");
-
-                        if (filter === "all" || category.includes(filter)) {
+                        const categories = row.getAttribute("data-category").split(", ");
+                        if (filter === "all" || categories.includes(filter)) {
                             row.style.display = "table-row";
                         } else {
                             row.style.display = "none";

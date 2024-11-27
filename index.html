@@ -20,7 +20,12 @@
             color: #ffffff;
             padding: 20px;
         }
-
+        body ::selection {
+    background: transparent; /* Keep background clear */
+    color: inherit; /* Keep text color as is */
+    text-decoration: underline;
+    text-decoration-color: blue; /* Blue underline */
+}
         /* Section Styling */
         .about-section {
             text-align: left;

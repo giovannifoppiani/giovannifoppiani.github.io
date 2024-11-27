@@ -75,7 +75,7 @@
             color: #bbbbbb;
         }
 
-      /* Navbar Styling */
+      /* Navbar  */
 .navbar {
     background-color: #000000;
     padding: 0 20px;
@@ -129,6 +129,40 @@
     .navbar a {
         font-size: 12px;
     }
+}
+
+        /* Links Styling */
+tbody td a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+tbody td a::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg) translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+tbody td a:hover {
+    color: #81c784;
+}
+
+tbody td a:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translateY(-50%) translateX(-2px);
 }
 
         /* Table Styling */

@@ -9,7 +9,8 @@
 <body>
     <header>
         <div class="site-branding">
-            <h1><a href="#">Giovanni Foppiani &#8211; Visual Designer & Researcher</a></h1>
+            <h1>Giovanni Foppiani</h1>
+            <p>Visual Designer & Researcher</p>
         </div>
     </header>
 
@@ -20,52 +21,30 @@
         </p>
         <div class="columns">
             <p>
-                Along my design practice, I experimented with a large variety of media, from analogue to digital, from traditional printed forms to animated designs. In my opinion, each medium is a design object that must emphasize its unique characteristics.
+                Along my design practice, I experimented with a variety of media, from analogue to digital ones. Each medium must emphasize its unique characteristics.
             </p>
             <p>
-                Over the past years, I had the chance to travel and work in different European countries. Collaborating with diverse professionals allowed me to explore how impactful design can be for humans, society, and the planet.
+                Over the past years, I had the chance to travel and collaborate with diverse professionals, exploring how impactful design can be for society and the planet.
             </p>
         </div>
     </section>
 
     <main>
         <h1>Archivio</h1>
-        <div id="filter">
-            <div class="filter-select" onclick="filterTable('All', 2)">All Categories</div>
-            <div class="filter-select" onclick="filterTable('Research', 2)">Research</div>
-            <div class="filter-select" onclick="filterTable('Graphic Design', 2)">Graphic Design</div>
-            <div class="filter-select" onclick="filterTable('Workshop', 2)">Workshop</div>
-            <div class="filter-select" onclick="filterTable('Publications', 2)">Publications</div>
-        </div>
         <table>
             <tr class="clickable">
                 <td>2024</td>
-                <td><a href="#">WEB ECOSYSTEM MODEL FOR THE THIRD SECTOR IN THE VENETIAN TERRITORY</a></td>
-                <td>Map Design</td>
-                <td>...</td>
-                <td>Venezia</td>
+                <td><a href="#">Web Ecosystem Model for the Third Sector</a></td>
             </tr>
             <tr class="clickable">
                 <td>2024</td>
                 <td><a href="#">Cartografia dei servizi Iuav</a></td>
-                <td>Map Design</td>
-                <td>...</td>
-                <td>Venezia</td>
             </tr>
         </table>
     </main>
 
     <footer>
-        <p>&copy; 2024 CRITICITY. Designed for sustainability.</p>
+        <p>&copy; 2024 Giovanni Foppiani</p>
     </footer>
-    <script>
-        function filterTable(value, column) {
-            const rows = document.querySelectorAll("tr.clickable");
-            rows.forEach(row => {
-                const cellValue = row.cells[column]?.textContent.trim() || '';
-                row.style.display = value === "All" || cellValue.includes(value) ? "table-row" : "none";
-            });
-        }
-    </script>
 </body>
 </html>

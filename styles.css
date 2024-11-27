@@ -1,156 +1,116 @@
-/* styles.css */
-*{
-  margin:0;
-  padding:0;
+/* General Styles */
+body {
+    background-color: #1C1C1C;
+    color: #D9D9D9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    font-family: serif;
-    background-color: black;
-    color: white;
-    transition: 1s linear;
-  }
-
-  #my-div{
-    width: 3em;
-    height: 3em;
-    background: white;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-  }
-
-  /* Dark mode */
-
-  .dark-mode {
-    background-color: white;
-    color: black;
-    transition: 1s linear;
-  }
-
-
-.cta{
-    background-color: transparent;
-    border-style: none;
-    padding: 15px 32px;
+header, footer {
+    background-color: #1C1C1C;
     text-align: center;
+    padding: 20px 0;
+}
+
+header h1 a {
+    color: #D9D9D9;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: serif;
-  }
+}
 
-  .cta:hover{
-    text-decoration: underline;
+header h1 a:hover {
+    color: #31FC3C;
+}
 
-  }
-
-  h1{
-    font-size: 5em;
-    font-weight: lighter;
-  }
-
-  h2{
-    color: red;
-    font-size: 0.5em;
-    font-weight: lighter;
-    padding: 4em;
-
-  }
-
-  header {
+/* About Section */
+#about {
+    background-color: #1C1C1C;
+    color: #D9D9D9;
+    padding: 40px 20px;
     text-align: center;
-    padding: 1em;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-  }
+}
 
-  header a, .cta {
-    color: red;
+#about h2 {
+    color: #31FC3C;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#about .highlight {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#about .columns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #A9A9A9;
+}
+
+#about .columns p {
+    flex: 1;
+}
+
+/* Archivio Section */
+main h1 {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 24px;
+    color: #31FC3C;
+}
+
+#filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-select {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #31FC3C;
+}
+
+.filter-select:hover {
     text-decoration: none;
-    padding: 0 1em;
-    font-size: 1.5em;
-  }
+}
 
-  header li, a:hover{
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 40px;
+}
+
+th, td {
+    padding: 10px;
+    border-top: 1px solid #D9D9D9;
+    text-align: left;
+}
+
+td a {
+    color: #31FC3C;
+    text-decoration: none;
+}
+
+td a:hover {
     text-decoration: underline;
-  }
+}
 
-  #defaultCanvas0 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 100vh;
-    width: 100%;
-  }
-
-  main {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 2em;
-  }
-
-  section {
-    margin-bottom: 4em;
-  }
-
-  img{
-    width: 100%;
-    margin: 8px auto;
-    border: 10px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    /* mix-blend-mode: difference; */
-
-  }
-
-  img:hover {
-  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 1);
-  }
-
-  p{
-    font-size: 1em;
-    line-height: 1.2em;
-    mix-blend-mode: difference;
-  }
-
-  ::selection {
-    background: red;
-  }
-
-  #contact p{
-    font-size: 0.8em;
-  }
-
-  footer {
-    background-color: ;
-    color: red;
+/* Footer */
+footer {
     text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+    font-size: 14px;
+    color: #A9A9A9;
+}
 
-  footer p{
-    font-size: 1.5em;
-  }
-
-
-
-/* Mobile first */
-
-
-/* Large */
-
-
-@media (min-width:992px){
-  p{
-    font-size: 2em;
-    line-height: 1.2em;
-    mix-blend-mode: difference;
-  }
+footer p {
+    margin: 10px 0;
 }

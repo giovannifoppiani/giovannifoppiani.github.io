@@ -21,78 +21,131 @@
             padding: 20px;
         }
 
+        /* Section Styling */
+        .about-section {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .about-section img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .about-section .title {
+            font-size: 14px;
+            font-weight: normal;
+            color: #bbbbbb;
+            margin-bottom: 10px;
+        }
+
+        .about-section .subtitle {
+            font-size: 14px;
+            font-weight: normal;
+            color: #bbbbbb;
+            margin-bottom: 30px;
+        }
+
+        .about-section .heading {
+            font-size: 10px;
+            font-weight: bold;
+            color: #bbbbbb;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .about-section .lead-text {
+            font-size: 14px;
+            line-height: 1.6;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .about-section hr {
+            border: 0.5px solid #444444;
+            margin: 20px 0;
+        }
+
+        .about-section .description {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #bbbbbb;
+        }
+
         /* Navbar Styling */
         .navbar {
             background-color: #1a1a1a;
-            padding: 15px 20px;
-            text-align: left;
-        }
-
-        .navbar .nav-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 10px;
+            padding: 10px;
+            text-align: center;
+            overflow-x: auto;
         }
 
         .navbar ul {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
-            align-items: center;
-            margin: 0;
-            padding: 0;
         }
 
         .navbar li {
-            list-style: none;
+            cursor: pointer;
         }
 
         .navbar a {
-            font-size: 14px;
             color: #ffffff;
             text-decoration: none;
-            padding: 0 5px;
-            transition: color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .navbar .active a {
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
+        .navbar .active a,
         .navbar a:hover {
-            color: #bbbbbb;
+            background-color: #444444;
         }
 
-        /* Page Weight Indicator Styling */
-        .page-weight-indicator {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-size: 12px;
-            padding: 10px 15px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            z-index: 9999;
-            border-top: 1px solid #444444;
+        /* Table Styling */
+        .table-container {
+            margin-top: 20px;
+        }
+
+        table {
             width: 100%;
+            border-collapse: collapse;
             text-align: left;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        thead th {
+            padding: 10px 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #bbbbbb;
+            border-bottom: 1px solid #444444;
+        }
+
+        tbody td {
+            padding: 10px 5px;
+            border-bottom: 1px solid #444444;
+        }
+
+        tbody tr:hover {
+            background-color: #222222;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .navbar ul {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                overflow-x: auto;
-                gap: 10px;
+            table {
+                font-size: 12px;
             }
 
-            .navbar a {
-                font-size: 12px;
+            thead th:nth-child(3),
+            thead th:nth-child(4),
+            tbody td:nth-child(3),
+            tbody td:nth-child(4) {
+                display: none;
             }
         }
     </style>
@@ -115,7 +168,6 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <p class="nav-title">↓ Projects</p>
         <ul>
             <li class="active" data-filter="all"><a href="#">All</a></li>
             <li data-filter="Editorial"><a href="#">Editorial</a></li>
@@ -151,36 +203,21 @@
                     <td>Photography</td>
                     <td>Emma Zerial, elsewhere</td>
                 </tr>
-                <!-- Add remaining projects here -->
+                <tr data-category="Publications">
+                    <td>2025</td>
+                    <td>Low tech solution for collective resilience</td>
+                    <td>Publication</td>
+                    <td>Carmelo Leonardi, RF</td>
+                </tr>
+                <tr data-category="Publications">
+                    <td>2025</td>
+                    <td>Design for survival: Social innovation</td>
+                    <td>Publication</td>
+                    <td>ISSTEC, Iuav Venezia</td>
+                </tr>
+                <!-- Add remaining projects -->
             </tbody>
         </table>
     </div>
-
-    <!-- Page Weight Indicator -->
-    <div class="page-weight-indicator">
-        <p>Page Weight: <span id="page-weight">Calculating...</span></p>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            let totalSize = 0;
-
-            // Fetch all resources currently loaded
-            performance.getEntriesByType("resource").forEach((resource) => {
-                totalSize += resource.transferSize; // Sum up transfer sizes
-            });
-
-            // Format the size to KB or MB
-            const formatSize = (size) => {
-                return size >= 1048576
-                    ? (size / 1048576).toFixed(2) + " MB"
-                    : (size / 1024).toFixed(2) + " KB";
-            };
-
-            // Update the page weight indicator
-            document.getElementById("page-weight").textContent = formatSize(totalSize);
-        });
-    </script>
 </body>
 </html>

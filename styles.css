@@ -1,5 +1,5 @@
 /* General Reset */
-body, ul, li, table, th, td {
+body, ul, li, table, th, td, p, h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -14,39 +14,57 @@ body {
     padding: 20px;
 }
 
-/* Navbar Styling */
-.navbar {
+/* About Section Styling */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.about-section h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.about-section h2 {
     font-size: 16px;
-    color: #ffffff;
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: #bbbbbb;
+}
+
+.about-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-section p.lead {
+    font-size: 16px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.navbar ul {
-    display: flex;
-    gap: 15px;
-    padding-left: 10px;
-    align-items: center;
-    font-weight: 300;
-}
-
-.navbar ul li {
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: normal;
-}
-
-.navbar .active a {
-    text-decoration: underline;
+.about-section hr {
+    width: 50%;
+    border: 0.5px solid #444444;
+    margin: 10px auto;
 }
 
 /* Table Styling */
 .table-container {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 table {
@@ -90,11 +108,36 @@ tbody td a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        gap: 8px;
+    /* About Section for Mobile */
+    .about-section {
+        align-items: flex-start;
+        text-align: left;
     }
 
+    .about-section img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .about-section h1 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .about-section h2 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .about-section p {
+        font-size: 13px;
+    }
+
+    .about-section p.lead {
+        font-size: 14px;
+    }
+
+    /* Table for Mobile */
     table {
         font-size: 12px;
     }
@@ -102,33 +145,4 @@ tbody td a:hover {
     thead th, tbody td {
         padding: 8px 5px;
     }
-}
-/* Links Styling */
-tbody td a {
-    color: #ffffff;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    transition: color 0.3s ease;
-}
-
-tbody td a::before {
-    content: "↗";
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #ffffff;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-tbody td a:hover {
-    color: green;
-}
-
-tbody td a:hover::before {
-    opacity: 1;
-    transform: translateY(-50%) translateX(-3px); /* Adds subtle movement */
 }

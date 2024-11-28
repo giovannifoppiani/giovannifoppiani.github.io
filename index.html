@@ -21,10 +21,12 @@
             padding: 20px;
         }
         body ::selection {
-    background: transparent; /* Keep background clear */
-    color: inherit; /* Keep text color as is */
-    text-decoration: underline;
-    text-decoration-color: blue; /* Blue underline */
+   
+    
+  color: black;
+  background: blue;
+
+    
 }
         .container{
             margin: 40px;
@@ -56,7 +58,7 @@
             margin-bottom: 10px;
         }
 
-        .about-section .heading {
+         .heading {
             font-size: 12px;
             font-weight: regualr;
             color: #bbbbbb;
@@ -68,7 +70,7 @@
             font-size: 24px;
             line-height: 1.2;
             font-weight: normal;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .about-section hr {
@@ -145,7 +147,18 @@ tbody td a {
     position: relative;
     display: inline-block;
     transition: color 0.3s ease;
+  
 }
+
+tbody td a:hover {
+   
+   text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: red; 
+  transition: color 0.3s ease;
+}
+
+
 
 tbody td a::before {
     content: "↗";
@@ -157,10 +170,11 @@ tbody td a::before {
     color: #ffffff;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
+
 }
 
 tbody td a:hover {
-    color: #81c784;
+    color: #fffff;
 }
 
 tbody td a:hover::before {
@@ -231,12 +245,15 @@ tbody td a:hover::before {
           <p class="description">
             By investigating the mutual relationships between ecology, technology, and social ecosystems, my research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.
         </p>
+        <br>
         <hr>
-      
+    
     </div>
 
-     <hr>
+     <br>
+     
     <!-- Navigation Bar -->
+    
    <p class="heading">↓ PROJECTS</p>  
     <nav class="navbar">
         <ul>

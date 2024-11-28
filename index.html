@@ -21,15 +21,16 @@
             padding: 20px;
         }
         body ::selection {
-   
+            color: #000000;
+            background: #C9E087;
+            font-weight: bold;
     
-  color: black;
-  background: blue;
-
+        }
     
-}
+  
         .container{
             margin: 40px;
+           
         }
         /* Section Styling */
         .about-section {
@@ -84,6 +85,7 @@
             line-height: 1.2;
             color: #bbbbbb;
         }
+        
 
       /* Navbar  */
 .navbar {
@@ -154,7 +156,7 @@ tbody td a:hover {
    
    text-decoration: underline;
     text-decoration-style: dotted;
-    text-decoration-color: red; 
+    text-decoration-color: #C9E087; 
   transition: color 0.3s ease;
 }
 
@@ -227,17 +229,115 @@ tbody td a:hover::before {
             tbody td:nth-child(4) {
                 display: none;
             }
+            /* About Section Styling */
+.about-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-section .lead {
+    font-size: 18px; /* Default size for mobile */
+    line-height: 1.6;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-columns {
+    display: block; /* Default single column for mobile */
+    column-gap: 30px;
+    margin-top: 20px;
+}
+
+.about-columns p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #bbbbbb;
+    margin-bottom: 15px;
+}
+  /* Sticky Section Styling */
+        .section {
+            position: sticky; /* Sticks each section at the top */
+            top: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 4rem;
+            color: #ffffff;
+            z-index: 1; /* Base z-index */
         }
+
+        .section1 {
+            background-color: #1abc9c; /* Green */
+            z-index: -4;
+        }
+
+        .section2 {
+            background-color: #3498db; /* Blue */
+            z-index: -3;
+        }
+
+        .section3 {
+            background-color: #e74c3c; /* Red */
+            z-index: -2;
+        }
+
+        .section4 {
+            background-color: #9b59b6; /* Purple */
+            z-index: -1;
+        }
+
+
+        }
+
+        /* Desktop View Styling */
+@media (min-width: 768px) {
+    .about-section .lead-text {
+        font-size: 36px; /* Larger size for desktop */
+        ;
+    }
+
+    .description  {
+        column-count: 2; /* Two columns on larger screens */
+        column-gap: 40px;
+    }
+
+    .description p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+}
     </style>
 </head>
 <body>
     <!-- About Section -->
+    
      <div class="container">
+       
+
     <div class="about-section">
         <p class="title">Giovanni Foppiani</p>
-        <p class="subtitle">Visual designer & researcher</p>
+        <p class="subtitle">visual designer & researcher</p>
+
         <hr>
-                <img src="https://giovannifoppiani.github.io/giovannifoppiani/images/Foppiani_Giovanni_portfolio_2023.jpeg" alt="Northern-Lights">
+              <!-- Sticky Sections -->
+        <div class="intro">
+    <div class="section section1">
+        img
+    </div>
+    <div class="section section2">
+        <h1>About</h1>
+    </div>
+    <div class="section section3">
+        <h1>Projects</h1>
+    </div>
+    <div class="section section4">
+        <h1>Contact</h1>
+    </div>
+    </div>
+
         <p class="heading">About</p>
         <p class="lead-text">
             Through my design practice, he collaborates with eco-social conscious brands, public institution, and associations to strengthen their communication potential.

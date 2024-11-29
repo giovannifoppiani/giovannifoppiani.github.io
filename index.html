@@ -612,28 +612,34 @@ tbody td a:hover::before {
          <p>Giovanni Foppiani, designer and researcher at Università Iuav di Venezia, explores ecological and social interactions within techno-social ecosystems. His work focuses particularly on digital sustainability and social innovation. He collaborates with eco-socially conscious brands, collectives, and associations to enhance their communication capabilities.</p>
  </div>
       <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navItems = document.querySelectorAll(".navbar ul li");
-            const rows = document.querySelectorAll("tbody tr");
+    document.addEventListener("DOMContentLoaded", () => {
+        const navItems = document.querySelectorAll(".navbar ul li");
+        const rows = document.querySelectorAll("tbody tr");
 
-            navItems.forEach(item => {
-                item.addEventListener("click", () => {
-                    navItems.forEach(nav => nav.classList.remove("active"));
-                    item.classList.add("active");
+        navItems.forEach(item => {
+            item.addEventListener("click", (event) => {
+                event.preventDefault(); // Prevent the page from jumping to the top
+                navItems.forEach(nav => nav.classList.remove("active"));
+                item.classList.add("active");
 
-                    const filter = item.getAttribute("data-filter");
+                const filter = item.getAttribute("data-filter");
 
-                    rows.forEach(row => {
-                        const categories = row.getAttribute("data-category").split(", ");
-                        if (filter === "all" || categories.includes(filter)) {
-                            row.style.display = "table-row";
-                        } else {
-                            row.style.display = "none";
-                        }
-                    });
+                rows.forEach(row => {
+                    const categories = row.getAttribute("data-category").split(", ");
+                    if (filter === "all" || categories.includes(filter)) {
+                        row.style.display = "table-row"; // Ensure rows are displayed
+                        row.style.visibility = "visible"; // Ensure visibility
+                        row.style.opacity = "1"; // Optional: Smooth transition
+                    } else {
+                        row.style.display = "table-row"; // Keep the layout consistent
+                        row.style.visibility = "hidden";
+                        row.style.opacity = "0"; // Optional: Smooth transition
+                    }
                 });
             });
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>

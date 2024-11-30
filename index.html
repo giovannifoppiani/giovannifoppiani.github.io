@@ -30,7 +30,9 @@
     
   
         .container{
-            margin: 40px;
+        margin: 40px auto;
+    max-width: 1200px; /* Limit the width for better alignment */
+    padding: 0 20px; /* Add padding for responsiveness */
            
         }
         /* Section Styling */
@@ -228,6 +230,8 @@ tbody td a:hover::before {
         /* Table Styling */
         .table-container {
             margin-top: 20px;
+	
+    padding: 0 20px; /* Match container padding */
         }
 
         table {
@@ -273,7 +277,10 @@ tbody td a:hover::before {
             /* About Section Styling */
 .about-section {
     text-align: left;
-    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+
 }
 
 .about-section .lead {
@@ -337,7 +344,11 @@ tbody td a:hover::before {
 @media (min-width: 768px) {
     .about-section .lead-text {
         font-size: 36px; /* Larger size for desktop */
-        ;
+        
+    }
+	.about-section img {
+        width: 100%;
+        height: auto; /* Vertical display on mobile */
     }
 
     .description  {
@@ -348,6 +359,13 @@ tbody td a:hover::before {
     .description p {
         font-size: 16px;
         line-height: 1.8;
+    }
+}
+
+	    @media (min-width: 768px) {
+    .about-section img {
+        max-width: 100%; /* Maintain horizontal alignment on desktop */
+        height: auto;
     }
 }
     </style>
@@ -363,8 +381,12 @@ tbody td a:hover::before {
         <p class="subtitle">visual designer & researcher</p>
 
         <hr>
-             Sticky Sections 
-        <div class="intro">
+  
+	<div class="about-section">
+        <div class="intro">	
+  	  <img loading="lazy" src="images/Foppiani_Giovanni_portfolio_2023_1.jpg" alt="Portfolio Image 1">
+ 	   <img loading="lazy" src="images/Foppiani_Giovanni_portfolio_2023_2.jpg" alt="Portfolio Image 2">
+
 		   <img loading="lazy"src="images/Foppiani_Giovanni_portfolio_2023_1.jpg">
 		  </div>
     <div class="section section1">
@@ -380,6 +402,7 @@ tbody td a:hover::before {
            <img loading="lazy"src="images/Foppiani_Giovanni_portfolio_2023_1.jpg">
     </div>
     </div>
+	  </div>
         
 
        
@@ -611,29 +634,27 @@ tbody td a:hover::before {
 
          <p>Giovanni Foppiani, designer and researcher at Università Iuav di Venezia, explores ecological and social interactions within techno-social ecosystems. His work focuses particularly on digital sustainability and social innovation. He collaborates with eco-socially conscious brands, collectives, and associations to enhance their communication capabilities.</p>
  </div>
-      <script>
+     <script>
     document.addEventListener("DOMContentLoaded", () => {
         const navItems = document.querySelectorAll(".navbar ul li");
         const rows = document.querySelectorAll("tbody tr");
 
         navItems.forEach(item => {
             item.addEventListener("click", (event) => {
-                event.preventDefault(); // Prevent the page from jumping to the top
-                navItems.forEach(nav => nav.classList.remove("active"));
-                item.classList.add("active");
+                event.preventDefault(); // Prevent page scrolling
+                navItems.forEach(nav => nav.classList.remove("active")); // Remove active class
+                item.classList.add("active"); // Add active class to clicked filter
 
                 const filter = item.getAttribute("data-filter");
 
                 rows.forEach(row => {
                     const categories = row.getAttribute("data-category").split(", ");
                     if (filter === "all" || categories.includes(filter)) {
-                        row.style.display = "table-row"; // Ensure rows are displayed
+                        row.style.display = "table-row"; // Show matching rows
                         row.style.visibility = "visible"; // Ensure visibility
                         row.style.opacity = "1"; // Optional: Smooth transition
                     } else {
-                        row.style.display = "table-row"; // Keep the layout consistent
-                        row.style.visibility = "hidden";
-                        row.style.opacity = "0"; // Optional: Smooth transition
+                        row.style.display = "none"; // Hide non-matching rows
                     }
                 });
             });

@@ -27,12 +27,17 @@
         height: 400vh; /* Extend the body height for scrolling */
 
         }
-    
+
+	    .container,
+.section,
+.table-container {
+    margin: 0 auto; /* Center the content */
+    padding: 0 20px; /* Add 20px padding from the screen edges */
+    max-width: calc(100% - 40px); /* Ensures 20px margin on both sides */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
   
-        .container{
-        margin: 40px auto;
-    max-width: 1200px; /* Limit the width for better alignment */
-    padding: 0 20px; /* Add padding for responsiveness */
+    
            
         }
         /* Section Styling */
@@ -92,16 +97,14 @@
 
 .section {
     position: sticky;
-    top: 0; /* Stick each section to the top of the viewport */
-/*    height: 100vh;  Full screen height */
+    top: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 4rem;
-    color: #ffffff;
-    z-index: 1; /* Base z-index */
-    transition: background-color 0.3s ease-in-out;
+    z-index: 1;
 }
 
 /* Background colors for each section */
@@ -228,12 +231,11 @@ tbody td a:hover::before {
 
 
         /* Table Styling */
-        .table-container {
-            margin-top: 20px;
-	
-    padding: 0 20px; /* Match container padding */
-        }
-
+       .table-container {
+    margin-top: 20px;
+    max-width: calc(100% - 40px); /* Same as container and sections */
+    padding: 0 20px;
+}
         table {
             width: 100%;
             border-collapse: collapse;
@@ -280,7 +282,12 @@ tbody td a:hover::before {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
-
+}
+		.about-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .about-section .lead {
@@ -385,10 +392,15 @@ tbody td a:hover::before {
 <div class="about-section">
         <div class="intro">	
     	<img class="section" loading="lazy" src="images/Foppiani_Giovanni_1.jpg">
+		2024 | Criticity sustainable platform for dissemination
       	  <img class="section" loading="lazy"src="images/Foppiani_Giovanni_2.jpg">
+		2024 | Criticity sustainable platform for dissemination
       	  <img class="section" loading="lazy"src="images/Foppiani_Giovanni_3.jpg">
+		2024 | Criticity sustainable platform for dissemination
 	<img class="section" loading="lazy"src="images/Foppiani_Giovanni_4.jpg">
+		2024 | Criticity sustainable platform for dissemination
       	  <img class="section" loading="lazy"src="images/Foppiani_Giovanni_5.jpg">
+		2024 | Criticity sustainable platform for dissemination
 	 </div>
  
   </div>

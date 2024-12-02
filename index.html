@@ -87,10 +87,6 @@ border-radius: 25px;
             font-weight: normal;
             margin-bottom: 20px;
         }
-	    
-        .about-section .lead-text p{
-          margin: 0;
-        }
 
         .about-section hr {
             border: 0.5px solid #444444;
@@ -192,9 +188,6 @@ border-radius: 25px;
     .navbar a {
         font-size: 12px;
     }
-	 thead th,
-    tbody td {
-        display: table-cell; /* Reset to display all columns */
 }
 
        /* Links Styling */
@@ -279,7 +272,12 @@ tbody td a:hover::before {
             margin: 0;
         }
 
-   
+            thead th:nth-child(3),
+            thead th:nth-child(4),
+            tbody td:nth-child(3),
+            tbody td:nth-child(4) {
+                display: none;
+            }
             /* About Section Styling */
 .about-section {
     text-align: left;
@@ -363,7 +361,6 @@ tbody td a:hover::before {
 
         /* Desktop View Styling */
 @media (min-width: 768px) {
-         @media (min-width: 768px) {
 
 	.container{
 		margin: 50px;

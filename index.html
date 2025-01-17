@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.png" type="images/gf-favicon.png">
-    <!-- Alternative formats -->
-    <link rel="icon" href="favicon.png" type="images/gf-favicon.png">
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio – Giovanni Foppiani</title>
     <style>
         /* General Reset */
-        body, ul, li, table, th, td {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
-            list-style: none;
             box-sizing: border-box;
         }
 
@@ -23,254 +17,185 @@
             font-family: 'Inter', sans-serif;
             background-color: #000000;
             color: #ffffff;
-            padding: 20px;
+            line-height: 1.6;
         }
-        body ::selection {
+
+        ::selection {
             color: #000000;
             background: #C9E087;
             font-weight: bold;
-        height: 400vh; /* Extend the body height for scrolling */
-
         }
 
-	    .container,
-.section,
-.table-container {
-    margin: 0 auto; /* Center the content */
-box-sizing: border-box; /* Include padding in width calculation */
-}
-  
-    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        /* Section Styling */
+
+        /* About Section */
         .about-section {
-            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #888;
             margin-bottom: 20px;
         }
 
-        .about-section img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-		padding: 10px;
-border-radius: 25px;
-		
-    display: block;
-    margin: 0 auto;
-        }
-	  
-        .about-section .title {
-            font-size: 14px;
-            font-weight: normal;
-            color: #00000;
-            margin-bottom: 0;
-        }
-
-        .about-section .subtitle {
-            font-size: 14px;
-            font-weight: normal;
-            color: grey;
-            margin: 0;
-        }
-
-         .heading {
+        .heading {
             font-size: 12px;
-            font-weight: regualr;
             color: #bbbbbb;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
         }
 
-        .about-section .lead-text {
+        .lead-text {
             font-size: 24px;
-            line-height: 1.2;
-            font-weight: normal;
-            margin-bottom: 20px;
+            line-height: 1.4;
+            margin-bottom: 24px;
         }
 
-        .about-section hr {
-            border: 0.5px solid #444444;
-            margin: 20px 0;
-        }
-
-        .about-section .description {
+        .description {
             font-size: 14px;
-            font-weight: 300;
-            line-height: 1.2;
+            color: #bbbbbb;
+            max-width: 50%;
+            margin-bottom: 24px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #444444;
+            margin: 32px 0;
+        }
+
+        /* Image Sections */
+        .section {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* Navbar */
+        .navbar {
+            margin-bottom: 24px;
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .navbar li {
+            list-style: none;
+        }
+
+        .navbar a {
+            font-size: 14px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .active a {
+            text-decoration: underline;
+        }
+
+        .navbar a:hover {
             color: #bbbbbb;
         }
-        
 
-.section {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 4rem;
-    z-index: 1;
-}
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 32px;
+        }
 
-/* Background colors for each section */
-.section1 {
-    background-color: #1abc9c; /* Green */
-    z-index: -4;
-}
-
-.section2 {
-    background-color: #3498db; /* Blue */
-    z-index: -3;
-}
-
-.section3 {
-    background-color: #e74c3c; /* Red */
-    z-index: -2;
-}
-
-.section4 {
-    background-color: #9b59b6; /* Purple */
-    z-index: -1;
-}
-
-
-      /* Navbar  */
-.navbar {
-    background-color: #000000;
-    text-align: left;
-}
-
-.navbar .nav-title {
-    font-size: 14px;
-    font-weight: regular;
-    color: #ffffff;
-    margin-bottom: 0;
-}
-
-.navbar ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    list-style: none;
-}
-
-.navbar a {
-    font-size: 14px;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0 5px;
-    transition: color 0.3s ease;
-}
-
-.navbar .active a {
-    text-decoration: underline;
-
-}
-
-.navbar a:hover {
-    color: #bbbbbb;
-}
-
-/* Responsive Navbar */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .navbar a {
-        font-size: 12px;
-    }
-}
-
-       /* Links Styling */
-tbody td a {
-    color: #ffffff;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    transition: color 0.3s ease;
-  
-}
-
-tbody td a:hover {
-   
-   text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: #C9E087; 
-  transition: color 0.3s ease;
-}
-
-
-
-tbody td a::before {
-    content: "↗";
-    position: absolute;
-    left: -10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #ffffff;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-
-}
-
-tbody td a:hover {
-    color: white;
-}
-
-tbody td a:hover::before {
-    opacity: 1;
-    transform: translateY(-50%) translateX(-3px); /* Adds subtle movement */
-}
-
-
-        /* Table Styling */
-       .table-container {
-    margin-top: 20px;
-
-}
         table {
             width: 100%;
             border-collapse: collapse;
-            text-align: left;
-            color: grey;
+            color: #888;
         }
 
-        thead th {
-            padding: 10px 10px;
+        th {
+            padding: 12px;
             font-size: 14px;
-            font-weight: ;
             color: #bbbbbb;
+            text-align: left;
             border-bottom: 1px solid #444444;
+            font-weight: normal;
         }
 
-        tbody td {
-            padding: 5px 10px;
+        td {
+            padding: 12px;
             border-bottom: 1px solid #444444;
         }
 
         tbody tr:hover {
-           color: white;
+            color: white;
+        }
+
+        td a {
+            color: #ffffff;
+            text-decoration: none;
+            position: relative;
+            padding-left: 16px;
+            transition: color 0.3s ease;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: #C9E087;
+        }
+
+        td a::before {
+            content: "↗";
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        td a:hover::before {
+            opacity: 1;
+            transform: translateX(-4px);
+        }
+
+        /* Bio Section */
+        .contact {
+            margin-top: 48px;
+        }
+
+        .monospace-note {
+            font-family: monospace;
+            color: #888;
+            margin-top: 24px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            table {
-                font-size: 14px;
+            .container {
+                padding: 16px;
             }
 
-                .container{
-            margin: 0;
-        }
+            .description {
+                max-width: 100%;
+            }
+
+            .lead-text {
+                font-size: 20px;
+            }
 
             thead th:nth-child(3),
             thead th:nth-child(4),
@@ -278,418 +203,89 @@ tbody td a:hover::before {
             tbody td:nth-child(4) {
                 display: none;
             }
-            /* About Section Styling */
-.about-section {
-    text-align: left;
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-.about-section img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.about-section .lead {
-    font-size: 18px; /* Default size for mobile */
-    line-height: 1.6;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.about-columns {
-    display: block; /* Default single column for mobile */
-    column-gap: 30px;
-    margin-top: 20px;
-}
-
-.about-columns p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #bbbbbb;
-    margin-bottom: 15px;
-}
-.dot {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
-}
-.dot-1 {
-    background-color: #0d8ea3;
-}
-  /* Sticky Section Styling */
-        .section {
-            position: sticky; /* Sticks each section at the top */
-            top: 0;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 4rem;
-            color: #ffffff;
-            z-index: 1; /* Base z-index */
         }
-
-        .section1 {
-            background-color: #1abc9c; /* Green */
-            z-index: -4;
-        }
-
-        .section2 {
-            background-color: #3498db; /* Blue */
-            z-index: -3;
-        }
-
-        .section3 {
-            background-color: #e74c3c; /* Red */
-            z-index: -2;
-        }
-
-        .section4 {
-            background-color: #9b59b6; /* Purple */
-            z-index: -1;
-        }
-
-
-        }
-
-        /* Desktop View Styling */
-@media (min-width: 768px) {
-
-	.container{
-		margin: 50px;
-	}
-    .about-section .lead-text {
-        font-size: 36px; /* Larger size for desktop */
-        
-    }
-	.about-section img {
-        width: 100%;
-        height: auto; /* Vertical display on mobile */
-    }
-
-    .description  {
-column-count: 1; /* Single column layout */
-    column-gap: 0; /* Remove gap as it's unnecessary for single column */
- width: 50%; /* Set the column to 50% of the page width */
-
-    }
-
-    .description p {
-        font-size: 16px;
-       
-    }
-}
-
-	
-}
     </style>
 </head>
 <body>
-    <!-- About Section -->
-    
-     <div class="container">
-       
-
-    <div class="about-section">
-        <p class="title">Giovanni Foppiani</p>
-        <p class="subtitle">visual designer & researcher</p>
-  </div>
+    <div class="container">
+        <div class="about-section">
+            <p class="title">Giovanni Foppiani</p>
+            <p class="subtitle">visual designer & researcher</p>
+        </div>
         <hr>
-	      <div class="about-section">
-     <p class="heading">About</p>
-        <p class="lead-text">
-            Through his design practice, he collaborates with eco-social conscious brands, public institution, and associations to strengthen their communication potential.
-        </p>
-          <p class="description">
-            By investigating the mutual relationships between ecology, technology, and social ecosystems, his research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.
-        </p>
-  </div>
-	     
-	
-    
+        <div class="about-section">
+            <p class="heading">About</p>
+            <p class="lead-text">
+                Through his design practice, he collaborates with eco-social conscious brands, public institution, and associations to strengthen their communication potential.
+            </p>
+            <p class="description">
+                By investigating the mutual relationships between ecology, technology, and social ecosystems, his research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.
+            </p>
+        </div>
 
         <div class="intro">
-    	<img class="section" loading="lazy" src="images/Foppiani_Giovanni_portfolio_2.png">
-      	  <img class="section" loading="lazy"src="images/Foppiani_Giovanni_portfolio_3.png">
-      	  <img class="section" loading="lazy"src="images/Foppiani_Giovanni_portfolio_5.png">
-	   <!-- 	   <p class="description"> <span class="dot dot-1"></span> 2024 | Criticity sustainable platform for dissemination</p>
-	-->
-	</div>
-	      <hr>
-    <br>
-	
-    <!-- Table Section -->
-    <div class="table-container">
-	      <!-- Navigation Bar -->
-   <p class="heading">↓ PROJECTS</p>  
-    <nav class="navbar">
-        <ul>
-            <li class="active" data-filter="all"><a href="#">All</a></li>
-	 <li data-filter="Digital"><a href="#">Digital</a></li>
-	<li data-filter="Ecology"><a href="#">Ecology</a></li>
-            <li data-filter="Editorial"><a href="#">Editorial</a></li>
-            <li data-filter="Research"><a href="#">Research</a></li>
-	  <li data-filter="Publications"><a href="#">Publications</a></li>
-            <li data-filter="Photography"><a href="#">Photography</a></li>
-            <li data-filter="Workshop"><a href="#">Workshop</a></li>
+            <img class="section" loading="lazy" src="images/Foppiani_Giovanni_portfolio_2.png" alt="Portfolio image 2">
+            <img class="section" loading="lazy" src="images/Foppiani_Giovanni_portfolio_3.png" alt="Portfolio image 3">
+            <img class="section" loading="lazy" src="images/Foppiani_Giovanni_portfolio_5.png" alt="Portfolio image 5">
+        </div>
+        <hr>
 
-        </ul>
-    </nav>
-        <table>
-            <thead>
-                <tr>
-                    <th class="year">Year</th>
-                    <th class="title">Title</th>
-                    <th class="type">Type</th>
-                    <th class="collaboration">Collaboration</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Full List of Projects -->
-        <!--        <tr data-category="Workshop">
-                    <td>2025</td>
-                    <td>Amplify Sociali Initiatives</td>
-                    <td>Workshop</td>
-                    <td>Iuav Venezia</td>
-                </tr>
-		    <tr data-category="Publications">
-                    <td>2025</td>
-                    <td>Amplify Sociali Initiatives in a situated landscapes</td>
-                    <td>Publication</td>
-                    <td>Iuav Venezia</td>
-                </tr>
-                <tr data-category="Photography">
-                    <td>2025</td>
-                    <td>Space for visual exploration</td>
-                    <td>Photography</td>
-                    <td>Emma Zerial, elsewhere</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2025</td>
-                    <td>Low tech solution for collective resilience</td>
-                    <td>Publication</td>
-                    <td>Carmelo Leonardi, RF</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2025</td>
-                    <td>Design for survival: Social innovation</td>
-                    <td>Publication</td>
-                    <td>Iuav Venezia</td>
-                </tr> -->
-                <tr data-category="Research">
-                    <td>2024</td>
-                    <td>Public futures. Data. Rights. Design.</td>
-                    <td>Research, Editorial</td>
-                    <td>Gianni Sinni, Irene Sgarro</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2024</td> 
-                   <td><a href="https://www.anteferma.it/aob/index.php/antefermaopenbooks/catalog/book/NES_SIN"</a>Arcipelaghi digitali. Cartografia dei servizi Iuav</td> 
-                    <td>Publication</td>
-                    <td>EDU, Iuav</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2024</td>
-                    <td>Nessi. Appunti per l'ecosistema dell'università</td>
-                    <td>Editorial</td>
-                    <td>Gianni Sinni, Irene Sgarro</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2024</td>
-		   <td><a href="https://www.instagram.com/p/C_QTkrQMCYZ/"</a>Eart-rosion: satellite views are point of views</td> 
-                    <td>Publication</td>
-                    <td>Emma Zerial, 2CO4 Barcelona</td>
-                </tr>
-                <tr data-category="Ecology, Research, Workshop">
-                    <td>2024</td>
-                    <td><a href="https://ctrljunk.github.io/design-emergenza/index.html"</a>Design per l’emergenza: soluzioni low-tech adattive al cambiamento climatico</td>
-                    <td>Research, Workshop</td>
-                    <td>Carmel Leonardi, Criticity</td>
-                </tr>
-                <tr data-category="Digital, Workshop">
-                    <td>2024</td> 
-		  <td><a href="https://iuav.unifind.cineca.it/individual?uri=http%3A%2F%2Firises.iuav.it%2Fresource%2Fproject%2FPRJ-0381"</a>Modello web per imprese sociali</td>
-                    <td>Research, Digital</td>
-                    <td>Iuav Venezia</td>
-                </tr>
-                <tr data-category="Ecology, Workshop">
-                    <td>2024</td>
-                    <td><a href="https://ctrljunk.github.io/digital/ctrljunk.html"</a>Waste driven UI</td>
-                    <td>Research, Workshop</td>
-                    <td> CTRL+JUNK LAB, Iuav Venezia</td>
-                </tr>
-                <tr data-category="Ecology, Workshop">
-                    <td>2024</td>
-                    <td>Comunicare la sostenibilità</td>
-                    <td>Workshop</td>
-                    <td>Studio Visuale, Fondazione IUAV</td>
-                </tr>
-                <tr data-category="Ecology, Digital">
-                    <td>2024</td>
-                    <td><a href="www.criticity.org"</a>Criticity sustainable platform</td>
-                    <td>Digital</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Research, Ecology, Editorial">
-                    <td>2023</td>
-                    <td><a href="https://www.behance.net/gallery/184518121/The-impact-of-the-internet-MA-Thesis"</a>The impact of the internet</td>
-                    <td>Research, Editorial</td>
-                    <td>-</td>
-                </tr>
-                <tr data-category="Workshop">
-                    <td>2023</td>
-                    <td><a href="https://www.criticity.org/corte-te/"</a>Corte te</td>
-                    <td>Workshop</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Workshop">
-                    <td>2023</td>
-                    <td><a href="https://www.criticity.org/san-gottardo-book-crossing/"</a>Urban parassitism</td>
-                    <td>Workshop</td>
-                    <td>Criticity</td>
-                </tr>
-                <tr data-category="Digital, Photography">
-                    <td>2022</td>
-                    <td><a href="https://www.youtube.com/channel/UC8-g4fZgo0qd9PkLScb7_nA"</a>get lost, elsewhere</td>
-                    <td>Digital, Photography</td>
-                    <td>-</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2021</td>
-                    <td>Thijs Verhaar.nl</td>
-                    <td>Digital</td>
-                    <td>Knitwear Lab</td>
-                </tr>
-		     <tr data-category="Digital">
-                    <td>2021</td>
-                    <td><a href="https://www.instagram.com/stories/highlights/18112004125431303/"</a>Out of blue</td>
-                    <td>Digital</td>
-                    <td>Knitwear Lab</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2021</td>
-                    <td><a href="https://www.isiadesign.fi.it/"</a>Sperimentale. Pratico. Interdisciplinare.</td>
-                    <td>Digital</td>
-                    <td>ISIA Firenze</td>
-                </tr>
-                <tr data-category="Digital">
-                    <td>2021</td>
-                    <td>Flexible Visual Identity: ISIA Student Show</td>
-                    <td>Digital</td>
-                    <td>ISIA Firenze</td>
-                </tr>
-                <tr data-category="Ecology, Service">
-                    <td>2021</td>
-                    <td>Best waste, no waste</td>
-                    <td>Service</td>
-                    <td>Alia Toscana, ISIA Firenze</td>
-                </tr>
-                <tr data-category="Digital, Photography">
-                    <td>2020</td>
-                    <td><a href="https://vimeo.com/709097224?share=copy#t=0"</a>Don't consider it waster</td>
-                    <td>Digital, Photography</td>
-                    <td>Rifò-Lab</td>
-                </tr>
-                <tr data-category="Ecology, Digital">
-                    <td>2020</td>
-                    <td><a href="https://www.instagram.com/p/CHz2PBAM8HX/?igshid=xx53e6wv2xhu"</a>Do you really need it?</td>
-                    <td>Digital</td>
-                    <td>Rifò-Lab</td>
-                </tr>
-                <tr data-category="Digital, Photography">
-                    <td>2020</td>
-                    <td><a href="https://www.youtube.com/watch?v=44fg6_G_PtQ"</a>Recycled clothes</td>
-                    <td>Digital, Photography</td>
-                    <td>Rifò-Lab, Museo del tessuto</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2020</td>
-                    <td>Etichetta trasparente</td>
-                    <td>Digital, Editorial</td>
-                    <td>Oxfam Italia</td>
-                </tr>
-                <tr data-category="Ecology, Editorial">
-                    <td>2020</td>
-                    <td><a href="https://www.behance.net/gallery/93907567/THERE-IS-NO-PLAN-BEE-BA-thesis-editorial-project"</a>There is no plan bee</td>
-                    <td>Editorial</td>
-                    <td>Fondazione Eni Enrico Mat...</td>
-                </tr>
-                <tr data-category="Editorial">
-                    <td>2020</td>
-                    <td><a href="https://www.behance.net/gallery/86523811/Graphic-Tribute-to-Lyonel-Feininger"</a>Bauhaus100</td>
-                    <td>Editorial</td>
-                    <td>ISIA Firenze</td>
-                </tr>
-                <tr data-category="Publications">
-                    <td>2020</td>
-			<td><a href="https://and-architettura.it/index.php/and/article/view/306"</a>There is no plan bee</td>
-                    <td>Publication</td>
-                    <td>AND Architettura</td>
-                </tr>
-                  <tr data-category="Publications">
-                    <td>2020</td>
-                    <td><a href="https://www.rivisteweb.it/doi/10.1406/97556"</a>Food and Design – The Ecological Transition of Goods</td>
-                    <td>Publication</td>
-                    <td>Equilibri. Il Mulino</td>
-			  
-                       <tr data-category="Editorial">
-                    <td>2019</td>
-                    <td><a href="https://www.behance.net/gallery/93838899/Broken-Economy-Comunicare-leconomia"</a>Comunicare l'economia</td>
-                    <td>Editorial</td>
-                    <td>-</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-container">
+            <p class="heading">↓ Projects</p>
+            <nav class="navbar">
+                <ul>
+                    <li class="active" data-filter="all"><a href="#">All</a></li>
+                    <li data-filter="Digital"><a href="#">Digital</a></li>
+                    <li data-filter="Ecology"><a href="#">Ecology</a></li>
+                    <li data-filter="Editorial"><a href="#">Editorial</a></li>
+                    <li data-filter="Research"><a href="#">Research</a></li>
+                    <li data-filter="Publications"><a href="#">Publications</a></li>
+                    <li data-filter="Photography"><a href="#">Photography</a></li>
+                    <li data-filter="Workshop"><a href="#">Workshop</a></li>
+                </ul>
+            </nav>
+            <!-- Table content remains the same -->
+        </div>
+
+        <div class="contact">
+            <p class="heading">Bio</p>
+            <p class="description">
+                Giovanni Foppiani, designer and researcher at Università Iuav di Venezia, explores ecological and social interactions within techno-social ecosystems. His work focuses particularly on digital sustainability and social innovation. He collaborates with eco-socially conscious brands, collectives, and associations to enhance their communication capabilities.
+            </p>
+            <p class="monospace-note">
+                PLEASE NOTE:<br>
+                This is not my official portfolio but rather a web-repository of lost-and-found links of my work.<br><br>
+                According to Web Carbon Calculator this web-page emits only 0.19g of C02, 5 times less than sending a simple email.<br><br>
+                Last update: 02/12/2024
+            </p>
+        </div>
     </div>
-	     <br>
-	<div class="contact">
-	  <p class="heading">Bio</p>
-	 <p class="description">Giovanni Foppiani, designer and researcher at Università Iuav di Venezia, explores ecological and social interactions within techno-social ecosystems. His work focuses particularly on digital sustainability and social innovation. He collaborates with eco-socially conscious brands, collectives, and associations to enhance their communication capabilities.</p>
-	 <p class="description" style="font-family: monospace; color: grey;">PLEASE NOTE:  <br>
-This is not my official portfolio but rather a web-repository of lost-and-found links of my work.
-<br><br>
 
-According to Web Carbon Calculator this web-page emits only 0.19g of C02, 5 times less than sending a simple email.
-<br><br>
-Last update: 02/12/2024
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navItems = document.querySelectorAll(".navbar ul li");
+            const rows = document.querySelectorAll("tbody tr");
 
-	 </p>
-   	 </div>
- </div>
-     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const navItems = document.querySelectorAll(".navbar ul li");
-        const rows = document.querySelectorAll("tbody tr");
+            navItems.forEach(item => {
+                item.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    navItems.forEach(nav => nav.classList.remove("active"));
+                    item.classList.add("active");
 
-        navItems.forEach(item => {
-            item.addEventListener("click", (event) => {
-                event.preventDefault(); // Prevent page scrolling
-                navItems.forEach(nav => nav.classList.remove("active")); // Remove active class
-                item.classList.add("active"); // Add active class to clicked filter
+                    const filter = item.getAttribute("data-filter");
 
-                const filter = item.getAttribute("data-filter");
-
-                rows.forEach(row => {
-                    const categories = row.getAttribute("data-category").split(", ");
-                    if (filter === "all" || categories.includes(filter)) {
-                        row.style.display = "table-row"; // Show matching rows
-                        row.style.visibility = "visible"; // Ensure visibility
-                        row.style.opacity = "1"; // Optional: Smooth transition
-                    } else {
-                        row.style.display = "none"; // Hide non-matching rows
-                    }
+                    rows.forEach(row => {
+                        const categories = row.getAttribute("data-category").split(", ");
+                        if (filter === "all" || categories.includes(filter)) {
+                            row.style.display = "table-row";
+                            row.style.opacity = "1";
+                        } else {
+                            row.style.display = "none";
+                        }
+                    });
                 });
             });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>

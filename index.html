@@ -136,12 +136,13 @@ border-radius: 25px;
 
 	     /* Publication Section */
 
-
+    .publication-section .heading { font-size: 16px; margin-bottom: 20px; }
     .publication-section ul { list-style: none; }
-    .publication-section li { font-family: serif; margin-bottom: 15px; line-height: 1.4; color: grey;}
-    .publication-section .author { color: white;}
+    .publication-section li {   font-family: serif; margin-bottom: 15px; line-height: 1.4; color: grey;}
+    .publication-section .author { font-weight: bold; color: white;}
     .publication-section .title { font-style: italic; color: white;}
     .publication-section .divider { border-top: 1px solid #444; margin: 15px 0; }
+
 
 
       /* Navbar  */
@@ -212,6 +213,7 @@ tbody td a {
 }
 
 tbody td a:hover {
+   
    text-decoration: underline;
     text-decoration-style: dotted;
     text-decoration-color: #C9E087; 
@@ -439,7 +441,7 @@ column-count: 1; /* Single column layout */
      <br>
 
 	    <!-- Publications Section -->
-  <section id="publications" class="heading">
+  <section id="publications" class="publication-section">
     <p class="heading">↓ Publications</p>
     <ul>
       <li>

@@ -144,13 +144,43 @@ border-radius: 25px;
     .publication-section .author { }
     .publication-section .title { font-style: italic; }
     .publication-section .divider { border-top: 1px solid #444; margin: 15px 0; }
- .publication-section .divider a{  color: red;}
-	    .publication-section .divider li a:hover{  
-		      text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: #C9E087; 
-  transition: color 0.3s ease;
-   }
+
+    /* Updated Publication Links Styling to match Projects */
+    .publication-section a {
+        color: #ffffff;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        transition: color 0.3s ease;
+    }
+
+    .publication-section a:hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: #C9E087; 
+        transition: color 0.3s ease;
+    }
+
+    .publication-section a::before {
+        content: "↗";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 12px;
+        color: #ffffff;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .publication-section a:hover {
+        color: white;
+    }
+
+    .publication-section a:hover::before {
+        opacity: 1;
+        transform: translateY(-50%) translateX(-3px); /* Adds subtle movement */
+    }
 
 
       /* Navbar  */
@@ -457,15 +487,15 @@ column-count: 1; /* Single column layout */
   <section id="publications" class="publication-section">
     <p class="heading">↓ Publications</p>
     <ul>
-      <li><a href="https://air.iuav.it/handle/11578/361569?mode=simple" target="_blank" </a>
+      <li>
         <span class="author">Foppiani, G., Sgarro, I., &amp; Sinni, G. (2025).</span>
         <span class="title">Public Futures. Data, rights, design.</span>
-        In D. Crippa &amp; R. Fagnoni (Eds.), Design@Work. Sources &amp; Resources (pp. 70–75). Anteferma Edizioni.
+        In D. Crippa &amp; R. Fagnoni (Eds.), Design@Work. Sources &amp; Resources (pp. 70–75). Anteferma Edizioni. <a href="https://air.iuav.it/handle/11578/361569?mode=simple" target="_blank">View publication</a>
         <div class="divider"></div>
       </li>
       <li>
         <span class="author">Fagnoni, R., Foppiani, G., &amp; Leonardi, C. (2025).</span>
-        <span class="title">Soluzioni low-tech per l’adattamento al cambiamento climatico nello spazio urbano.</span>
+        <span class="title">Soluzioni low-tech per l'adattamento al cambiamento climatico nello spazio urbano.</span>
         In D. Crippa &amp; R. Fagnoni (Eds.), Design@Work. Sources &amp; Resources (pp. 166–169). Conegliano: Anteferma Edizioni.
         <div class="divider"></div>
       </li>
@@ -489,7 +519,7 @@ column-count: 1; /* Single column layout */
       </li>
       <li>
         <span class="author">Leonardi, C., Foppiani, G., Soffietti, F., &amp; Artioli, L. (2025).</span>
-        <span class="title">Design per l’emergenza: piattaforme low-tech diffuse come strumenti di co-design per la mitigazione del cambiamento climatico e la resilienza comunitaria.</span>
+        <span class="title">Design per l'emergenza: piattaforme low-tech diffuse come strumenti di co-design per la mitigazione del cambiamento climatico e la resilienza comunitaria.</span>
         In SID. Design Plurale 2025. [In progress]
         <div class="divider"></div>
       </li>
@@ -501,7 +531,7 @@ column-count: 1; /* Single column layout */
       </li>
       <li>
         <span class="author">Foppiani, G. (2024).</span>
-        <span class="title">Nessi. Appunti per l’ecosistema digitale dell’università.</span>
+        <span class="title">Nessi. Appunti per l'ecosistema digitale dell'università.</span>
         In G. Sinni (Ed.), Arcipelaghi digitali. Cartografia dei servizi Iuav (pp. 132–141). Società Editrice Anteferma. <a href="https://doi.org/10.57623/979-12-5953-191-9" target="_blank">doi.org/10.57623/979-12-5953-191-9</a>
         <div class="divider"></div>
       </li>
@@ -578,7 +608,7 @@ column-count: 1; /* Single column layout */
            
                 <tr data-category="Ecology, Workshop">
                     <td>2024</td>
-                    <td><a href="https://ctrljunk.github.io/design-emergenza/index.html" target="_blank"</a>WDW Workshop: Design per l’emergenza</td>
+                    <td><a href="https://ctrljunk.github.io/design-emergenza/index.html" target="_blank"</a>WDW Workshop: Design per l'emergenza</td>
                     <td>Workshop</td>
                     <td>Università Iuav di Venezia</td>
                 </tr>

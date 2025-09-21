@@ -60,7 +60,7 @@
             font-weight: regular;
             color: #bbbbbb;
             text-transform: uppercase;
-            margin-bottom: 10px; /* Increased spacing as requested */
+            margin-bottom: 10px; /* Spacing above the element */
             letter-spacing: 0.5px;
         }
         
@@ -240,7 +240,7 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            color: #bbbbbb; /* Changed from grey to match the rest */
+            color: #bbbbbb;
         }
         
         thead th {
@@ -248,13 +248,13 @@
             font-size: 14px;
             color: #bbbbbb;
             border-bottom: 1px solid #444444;
-            font-weight: normal; /* Ensure not bold */
+            font-weight: normal;
         }
         
         tbody td {
             padding: 5px 10px;
             border-bottom: 1px solid #444444;
-            font-weight: normal; /* Ensure not bold */
+            font-weight: normal;
         }
         
         tbody tr:hover {
@@ -298,7 +298,6 @@
         .contact-section {
             margin-top: 60px;
             padding-top: 30px;
-            border-top: 1px solid #444444;
         }
         
         .contact-grid {
@@ -318,7 +317,13 @@
         
         .contact-details p {
             margin-bottom: 10px;
-            color: #ffffff; /* Changed from grey to white */
+            color: #ffffff;
+        }
+        
+        .contact-details .contact-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #ffffff;
         }
         
         .social-links {
@@ -333,6 +338,7 @@
             position: relative;
             display: inline-block;
             transition: color 0.3s ease;
+            font-size: 14px;
         }
         
         .social-links a:hover {
@@ -360,7 +366,7 @@
         }
         
         .note-section {
-            text-align: left; /* Changed from right to left */
+            text-align: left;
         }
         
         .note {
@@ -444,7 +450,6 @@
                 margin-top: 30px;
             }
             
-            /* Larger publication text on mobile */
             .publication-section li { 
                 font-size: 16px; 
                 line-height: 1.6;
@@ -478,7 +483,6 @@
                 font-size: 16px;
             }
             
-            /* Keep publication author and title inline on desktop */
             .publication-section .author,
             .publication-section .title {
                 display: inline;
@@ -492,6 +496,7 @@
         <div class="about-section">
             <p class="title">Giovanni Foppiani</p>
             <p class="subtitle">Communication designer & PhD researcher</p>
+            <hr> <!-- Line added after title and subtitle -->
             
             <div class="intro">
                 <img loading="lazy" src="images/Foppiani_Giovanni_portfolio_1.png" alt="Portfolio image 1">
@@ -522,8 +527,6 @@
             <button class="toggle-button" id="aboutToggle">
                 <span>Read more</span>
             </button>
-            
-            <hr>
         </div>
         
         <!-- Publications Section -->
@@ -787,12 +790,19 @@
                 <div class="contact-info">
                     <p class="heading">Bio</p>
                     <div class="contact-details">
-                        <p>Giovanni Foppiani is a communication designer and PhD researcher at LUT and RMIT University, whose work explores techno-social ecosystems for the common good. With a master's degree in Communication Design from ISIA Firenze, his practice focuses on digital sustainability, social innovation, and regenerative mobility. He has served as an assistant professor and researcher at Università Iuav di Venezia and developed a sustainable critical platform with the collective Criticity. His collaborations with public institutions and organizations like Rifô-lab and Oxfam Italy reflect a consistent commitment to Communication for the Common Good.</p>
+                        <p>Giovanni Foppiani is a communication designer and PhD researcher at LUT and RMIT University, whose work explores techno-social ecosystems for the common good. With a master's degree in Communication Design from ISIA Firenze, his practice focuses on digital sustainability, social innovation, and regenerative mobility. His collaborations with public institutions and organizations like Rifô-lab and Oxfam Italy reflect a consistent commitment to Communication for the Common Good.</p>
                         
-                        <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-3784-2451" target="_blank">0009-0008-3784-2451</a></p>
-                        <p><strong>EMAIL:</strong> GIOVANNI.FOPPIANI@LUT.FI</p>
+                        <div class="contact-item">
+                        <a href="https://orcid.org/0009-0008-3784-2451/" target="_blank">ORCID 0009-0008-3784-2451</a>
+                        </div>
+                        <div class="contact-item">
+                         <a href="https://orcid.org/0009-0008-3784-2451/" target="_blank">GIOVANNI.FOPPIANI@LUT.FI</a>
+
+                            <strong>EMAIL:</strong> GIOVANNI.FOPPIANI@LUT.FI
+                        </div>
                         
                         <div class="social-links">
+                            
                             <a href="https://www.instagram.com/__gio.va/" target="_blank">INSTAGRAM</a>
                             <a href="https://www.linkedin.com/in/giovanni-foppiani/" target="_blank">LINKEDIN</a>
                         </div>

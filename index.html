@@ -19,7 +19,6 @@
             font-family: 'Inter', sans-serif;
             background-color: #000000;
             color: #ffffff;
-            padding: 20px;
             line-height: 1.5;
         }
         
@@ -30,9 +29,10 @@
         }
         
         .container {
-            margin: 0 auto;
+            margin: 40px auto;
             max-width: 1000px;
             box-sizing: border-box;
+            padding: 0 20px;
         }
         
         /* About Section Styling */
@@ -60,7 +60,7 @@
             font-weight: regular;
             color: #bbbbbb;
             text-transform: uppercase;
-            margin-bottom: 3px; /* Reduced spacing */
+            margin-bottom: 10px; /* Increased spacing as requested */
             letter-spacing: 0.5px;
         }
         
@@ -126,7 +126,7 @@
         
         /* Publication Section */
         .publication-section .heading {
-            margin-bottom: 10px; /* Reduced spacing */
+            margin-bottom: 10px;
         }
         
         .publication-section ul { 
@@ -146,14 +146,13 @@
         }
         
         .publication-section .author {
-            display: block;
+            display: inline;
             margin-bottom: 2px;
         }
         
         .publication-section .title { 
             font-style: italic; 
-            display: block;
-            margin-bottom: 5px;
+            display: inline;
         }
         
         .publication-section .divider { 
@@ -166,7 +165,6 @@
             color: #ffffff;
             text-decoration: none;
             position: relative;
-            display: inline;
             transition: color 0.3s ease;
         }
         
@@ -242,7 +240,7 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            color: grey;
+            color: #bbbbbb; /* Changed from grey to match the rest */
         }
         
         thead th {
@@ -250,11 +248,13 @@
             font-size: 14px;
             color: #bbbbbb;
             border-bottom: 1px solid #444444;
+            font-weight: normal; /* Ensure not bold */
         }
         
         tbody td {
             padding: 5px 10px;
             border-bottom: 1px solid #444444;
+            font-weight: normal; /* Ensure not bold */
         }
         
         tbody tr:hover {
@@ -278,7 +278,7 @@
         }
         
         tbody td a::before {
-            content: " /";
+            content: "^";
             position: absolute;
             left: -10px;
             top: 50%;
@@ -318,7 +318,7 @@
         
         .contact-details p {
             margin-bottom: 10px;
-            color: #bbbbbb;
+            color: #ffffff; /* Changed from grey to white */
         }
         
         .social-links {
@@ -360,7 +360,7 @@
         }
         
         .note-section {
-            text-align: right;
+            text-align: left; /* Changed from right to left */
         }
         
         .note {
@@ -414,7 +414,8 @@
             }
             
             .container {
-                margin: 0;
+                margin: 20px auto;
+                padding: 0 15px;
             }
             
             thead th:nth-child(3),
@@ -460,7 +461,7 @@
             }
             
             .container {
-                margin: 50px;
+                margin: 40px auto;
             }
             
             .about-section .lead-text {
@@ -475,6 +476,12 @@
             
             .description p {
                 font-size: 16px;
+            }
+            
+            /* Keep publication author and title inline on desktop */
+            .publication-section .author,
+            .publication-section .title {
+                display: inline;
             }
         }
     </style>

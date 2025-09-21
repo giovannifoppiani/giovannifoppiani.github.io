@@ -424,3 +424,427 @@
                 display: none;
             }
             
+            .about-section .lead {
+                font-size: 18px;
+            }
+            
+            .about-section img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .note-section {
+                text-align: left;
+                margin-top: 30px;
+            }
+            
+            /* Larger publication text on mobile */
+            .publication-section li { 
+                font-size: 16px; 
+                line-height: 1.6;
+            }
+            
+            .publication-section .title {
+                margin-bottom: 8px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .publication-section li { 
+                font-size: 18px; 
+            }
+            
+            .container {
+                margin: 50px;
+            }
+            
+            .about-section .lead-text {
+                font-size: 36px;
+            }
+            
+            .description {
+                column-count: 1;
+                column-gap: 0;
+                width: 50%;
+            }
+            
+            .description p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- About Section -->
+        <div class="about-section">
+            <p class="title">Giovanni Foppiani</p>
+            <p class="subtitle">Communication designer & PhD researcher</p>
+            
+            <div class="intro">
+                <img loading="lazy" src="images/Foppiani_Giovanni_portfolio_1.png" alt="Portfolio image 1">
+                <img loading="lazy" src="images/Foppiani_Giovanni_portfolio_2.png" alt="Portfolio image 2">
+                <img loading="lazy" src="images/Foppiani_Giovanni_portfolio_3.png" alt="Portfolio image 3">
+                <img loading="lazy" src="images/Foppiani_Giovanni_portfolio_5.png" alt="Portfolio image 5">
+            </div>
+            
+            <p class="heading">About</p>
+            <p class="lead-text">
+                Through his design practice, he collaborates with eco-social conscious brands, public institution, and associations to foster sustainable digital innovation and strengthen their communication potential.
+            </p>
+            <p class="description">
+                By investigating the mutual relationships between ecology, technology, and social ecosystems, his research leads to scenarios that frame new ways of conceiving interspecies cooperation and collaborations.
+            </p>
+            
+            <!-- Collapsible Content -->
+            <div class="collapsible-content" id="aboutContent">
+                <p class="description">
+                    His approach combines critical design thinking with hands-on experimentation, creating bridges between academic research and practical applications. This methodology allows for the development of communication strategies that are both theoretically grounded and immediately applicable to real-world challenges.
+                </p>
+                <p class="description">
+                    Giovanni's work has been recognized internationally, with projects featured in major design exhibitions and publications. He continues to explore the intersection of design, technology, and ecology, seeking innovative ways to address pressing environmental and social issues.
+                </p>
+            </div>
+            
+            <!-- Toggle Button -->
+            <button class="toggle-button" id="aboutToggle">
+                <span>Read more</span>
+            </button>
+            
+            <hr>
+        </div>
+        
+        <!-- Publications Section -->
+        <section id="publications" class="publication-section">
+            <p class="heading">↓ Publications</p>
+            <ul>
+                <li>
+                    <span class="author">Foppiani, G., Sgarro, I., &amp; Sinni, G. (2025).</span>
+                    <a href="https://air.i.uav.it/handle/11578/361569?mode=simple" target="_blank" class="title">Public Futures. Data, rights, design.</a>
+                    In D. Crippa &amp; R. Fagnoni (Eds.), Design@Work. Sources &amp; Resources (pp. 70–75). Anteferma Edizioni.
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Fagnoni, R., Foppiani, G., &amp; Leonardi, C. (2025).</span>
+                    <a href="https://issuu.com/antefermaedizioni/docs/design_work_sources_resources" target="_blank" class="title">Soluzioni low-tech per l'adattamento al cambiamento climatico nello spazio urbano.</a>
+                    In D. Crippa &amp; R. Fagnoni (Eds.), Design@Work. Sources &amp; Resources (pp. 166–169). Conegliano: Anteferma Edizioni.
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Costa, P., Fagnoni, R., Foppiani, G., Lodovini, A., Manfroni, M., &amp; Sinni, G. (2025).</span>
+                    <span class="title">Sopravvivere al digitale: Design e Terzo settore.</span>
+                    In Design for Survival (Vol. X). [In progress]
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Costa, P., Fagnoni, R., Foppiani, G., Lodovini, A., Manfroni, M., &amp; Sinni, G. (2025).</span>
+                    <span class="title">Amplifying social initiatives in a located landscape.</span>
+                    In Cumulus 2025. [In progress]
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Fagnoni, R., Foppiani, G., Lodovini, A., Manfroni, M., &amp; Sinni, G. (2025).</span>
+                    <span class="title">Amplifying social initiatives: un framework di design per il Terzo settore.</span>
+                    In SID 2025. [In progress]
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Leonardi, C., Foppiani, G., Soffietti, F., &amp; Artioli, L. (2025).</span>
+                    <span class="title">Design per l'emergenza: piattaforme low-tech diffuse come strumenti di co-design per la mitigazione del cambiamento climatico e la resilienza comunitaria.</span>
+                    In SID. Design Plurale 2025. [In progress]
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Foppiani, G., &amp; Zerial, E. (2024).</span>
+                    <a href="https://www.researchgate.net/publication/394403142_Earthrosion_Satellite_views_are_points_of_view" target="_blank" class="title">E[arth]rosion: Satellite views are points of view.</a>
+                    In N. Ceccarelli (Ed.), 2CO-Communicating Complexity 4: Selected contributions to the Conference July 3–5, 2024, Barcelona. Fundació Privada Elisava Escola Universitària. FrancoAngeli.
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Foppiani, G. (2024).</span>
+                    <a href="https://doi.org/10.57623/979-12-5953-191-9" target="_blank" class="title">Nessi. Appunti per l'ecosistema digitale dell'università.</a>
+                    In G. Sinni (Ed.), Arcipelaghi digitali. Cartografia dei servizi luav (pp. 132–141). Società Editrice Anteferma.
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Cheri, S., Deganello, P., Foppiani, G., et al. (2020).</span>
+                    <a href="https://doi.org/10.1406/97556" target="_blank" class="title">Cibo e design – la conversione ecologica delle merci.</a>
+                    Società Editrice Il Mulino.
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <span class="author">Foppiani, G. (2020).</span>
+                    <a href="https://www.and-architettura.it/index.php/and/article/view/306" target="_blank" class="title">There is no plan bee.</a>
+                    AND Rivista Di Architetture, Città e Architetti, 37(1).
+                    <div class="divider"></div>
+                </li>
+            </ul>
+        </section>
+        
+        <br>
+        
+        <!-- Table Section -->
+        <div class="table-container">
+            <!-- Navigation Bar -->
+            <p class="heading">↓ PROJECTS</p>
+            <nav class="navbar">
+                <ul>
+                    <li class="active" data-filter="all"><a href="#">All</a></li>
+                    <li data-filter="Digital"><a href="#">Communication</a></li>
+                    <li data-filter="Editorial"><a href="#">Editorial</a></li>
+                    <li data-filter="Photography"><a href="#">Photography</a></li>
+                    <li data-filter="Ecology"><a href="#">Sustainability</a></li>
+                    <li data-filter="Workshop"><a href="#">Workshop</a></li>
+                </ul>
+            </nav>
+            
+            <table>
+                <thead>
+                    <!-- Full List of Projects -->
+                    <tr>
+                        <th class="year">Year</th>
+                        <th class="title">Title</th>
+                        <th class="type">Type</th>
+                        <th class="collaboration">Collaboration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-category="Workshop">
+                        <td>2025</td>
+                        <td>Amplify Social Initiatives</td>
+                        <td>Workshop</td>
+                        <td>Universitá Iuav di Venezia</td>
+                    </tr>
+                    <tr data-category="Editorial">
+                        <td>2025</td>
+                        <td><a href="https://www.graphicdays.it/neologia/the-impact-of-the-internet-giovanni-foppiani/" target="_blank">The impact of the internet</a></td>
+                        <td>Editorial</td>
+                        <td>Graphic Days Torino</td>
+                    </tr>
+                    <tr data-category="Editorial">
+                        <td>2024</td>
+                        <td><a href="https://doi.org/10.57623/979-12-5953-191-9" target="_blank">Nessi. Appunti per l'ecosistema dell'università</a></td>
+                        <td>Editorial</td>
+                        <td>Gianni Sinni, Irene Sgarro</td>
+                    </tr>
+                    <tr data-category="Photography">
+                        <td>2024</td>
+                        <td><a href="https://blog.veloplus.ch/2024/09/05/eine-velotour-voller-ueberraschungen/" target="_blank">Balkan bike trip</a></td>
+                        <td>Photography</td>
+                        <td>elsewhere, Veloplus</td>
+                    </tr>
+                    <tr data-category="Ecology, Workshop">
+                        <td>2024</td>
+                        <td><a href="https://ctrljunk.github.io/design-emergenza/index.html" target="_blank">WDW Workshop: Design per l'emergenza</a></td>
+                        <td>Workshop</td>
+                        <td>Università Iuav di Venezia</td>
+                    </tr>
+                    <tr data-category="Digital, Workshop">
+                        <td>2024</td>
+                        <td><a href="https://luav.unifind.cineca.it/individual?uri=http%3A%2F%2Firises.luav.it%2Fresource%2Fproject%2FPRJ-0381" target="_blank">Modello web per imprese sociali</a></td>
+                        <td>Digital platform</td>
+                        <td>Università Iuav di Venezia</td>
+                    </tr>
+                    <tr data-category="Ecology, Workshop">
+                        <td>2024</td>
+                        <td><a href="https://ctrljunk.github.io/digital/ctrljunk.html" target="_blank">Waste driven UI</a></td>
+                        <td>Workshop</td>
+                        <td>CTRL+JUNK LAB, Università Iuav di Venezia</td>
+                    </tr>
+                    <tr data-category="Ecology, Workshop">
+                        <td>2024</td>
+                        <td>Communicare la sostenibilità</td>
+                        <td>Communication workshop</td>
+                        <td>Studio Visuale, Fondazione IUAV</td>
+                    </tr>
+                    <tr data-category="Ecology, Digital">
+                        <td>2024</td>
+                        <td><a href="https://www.criticity.org" target="_blank">Criticity sustainable platform</a></td>
+                        <td>Web design, UX/UI</td>
+                        <td>Criticity</td>
+                    </tr>
+                    <tr data-category="Workshop">
+                        <td>2023</td>
+                        <td><a href="https://www.criticity.org/corte-te/" target="_blank">Corte te</a></td>
+                        <td>DIY Workshop</td>
+                        <td>Criticity</td>
+                    </tr>
+                    <tr data-category="Workshop">
+                        <td>2023</td>
+                        <td><a href="https://www.criticity.org/san-gottardo-book-crossing/" target="_blank">Urban parasitism</a></td>
+                        <td>DIY Workshop</td>
+                        <td>Criticity</td>
+                    </tr>
+                    <tr data-category="Digital, Photography">
+                        <td>2022</td>
+                        <td><a href="https://www.youtube.com/channel/UC8-g4fZgo0qd9PkLScb7_nA" target="_blank">get lost, elsewhere</a></td>
+                        <td>Digital video, Photography</td>
+                        <td>Founder</td>
+                    </tr>
+                    <tr data-category="Digital">
+                        <td>2021</td>
+                        <td><a href="https://www.thijsverhaar.nl/" target="_blank">Thijs Verhaar.nl</a></td>
+                        <td>Web design</td>
+                        <td>Knitwear Lab (NL)</td>
+                    </tr>
+                    <tr data-category="Digital">
+                        <td>2021</td>
+                        <td><a href="https://www.instagram.com/stories/highlights/18112004125431303/" target="_blank">Out of blue</a></td>
+                        <td>Digital knitting</td>
+                        <td>Knitwear Lab (NL)</td>
+                    </tr>
+                    <tr data-category="Digital">
+                        <td>2021</td>
+                        <td>Nature campus</td>
+                        <td>Branding</td>
+                        <td>Savonia University (FI)</td>
+                    </tr>
+                    <tr data-category="Digital">
+                        <td>2021</td>
+                        <td><a href="https://www.isiadesign.fi.it/" target="_blank">Sperimentale. Pratico. Interdisciplinare.</a></td>
+                        <td>Digital video</td>
+                        <td>ISIA Firenze</td>
+                    </tr>
+                    <tr data-category="Digital">
+                        <td>2021</td>
+                        <td>Flexible Visual Identity: ISIA Student Show</td>
+                        <td>Branding</td>
+                        <td>ISIA Firenze</td>
+                    </tr>
+                    <tr data-category="Ecology, Service">
+                        <td>2021</td>
+                        <td>Best waste, no waste</td>
+                        <td>Service design</td>
+                        <td>Alia Toscana, ISIA Firenze</td>
+                    </tr>
+                    <tr data-category="Digital, Photography">
+                        <td>2020</td>
+                        <td><a href="https://vimeo.com/709097224?share=copy#t=0" target="_blank">Don't consider it waster</a></td>
+                        <td>Digital video, Photography</td>
+                        <td>Rifo-Lab</td>
+                    </tr>
+                    <tr data-category="Ecology, Digital">
+                        <td>2020</td>
+                        <td><a href="https://www.instagram.com/p/CH22PBAM8HX/?igshid=xx53e6wv2xhu" target="_blank">Do you really need it?</a></td>
+                        <td>Digital</td>
+                        <td>Rifo-Lab</td>
+                    </tr>
+                    <tr data-category="Digital, Photography">
+                        <td>2020</td>
+                        <td><a href="https://www.youtube.com/watch?v=44fg6_G_PtQ" target="_blank">Recycled clothes</a></td>
+                        <td>Digital video, Photography</td>
+                        <td>Rifo-Lab, Museo del tessuto</td>
+                    </tr>
+                    <tr data-category="Digital">
+                        <td>2020</td>
+                        <td>Sagra Sonora</td>
+                        <td>Event design</td>
+                        <td>Comune di Vaglia, Flash Operatori</td>
+                    </tr>
+                    <tr data-category="Editorial">
+                        <td>2020</td>
+                        <td>Etichetta trasparente</td>
+                        <td>Branding, Editorial</td>
+                        <td>Oxfam Italia</td>
+                    </tr>
+                    <tr data-category="Ecology, Editorial">
+                        <td>2020</td>
+                        <td><a href="https://www.behance.net/gallery/93907567/THERE-IS-NO-PLAN-BEE-BA-thesis-editorial-project" target="_blank">There is no plan bee</a></td>
+                        <td>Editorial</td>
+                        <td>Fondazione Eni Enrico Mattei</td>
+                    </tr>
+                    <tr data-category="Editorial">
+                        <td>2020</td>
+                        <td><a href="https://www.behance.net/gallery/86523811/Graphic-Tribute-to-Lyonel-Feininger" target="_blank">Bauhaus100</a></td>
+                        <td>Editorial</td>
+                        <td>ISIA Firenze</td>
+                    </tr>
+                    <tr data-category="Editorial">
+                        <td>2019</td>
+                        <td><a href="https://www.behance.net/gallery/93838899/Broken-Economy-Comunicare-Ieconomia" target="_blank">Comunicare l'economia</a></td>
+                        <td>Editorial</td>
+                        <td>ISIA Firenze</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="heading">Bio</p>
+                    <div class="contact-details">
+                        <p>Giovanni Foppiani is a communication designer and PhD researcher at LUT and RMIT University, whose work explores techno-social ecosystems for the common good. With a master's degree in Communication Design from ISIA Firenze, his practice focuses on digital sustainability, social innovation, and regenerative mobility. He has served as an assistant professor and researcher at Università Iuav di Venezia and developed a sustainable critical platform with the collective Criticity. His collaborations with public institutions and organizations like Rifô-lab and Oxfam Italy reflect a consistent commitment to Communication for the Common Good.</p>
+                        
+                        <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-3784-2451" target="_blank">0009-0008-3784-2451</a></p>
+                        <p><strong>EMAIL:</strong> GIOVANNI.FOPPIANI@LUT.FI</p>
+                        
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/__gio.va/" target="_blank">INSTAGRAM</a>
+                            <a href="https://www.linkedin.com/in/giovanni-foppiani/" target="_blank">LINKEDIN</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note-section">
+                    <div class="note">
+                        <p>PLEASE NOTE:</p>
+                        <p>This is not my official portfolio but rather a web-repository of lost-and-found links of my work.</p>
+                        <p>According to <a href="https://www.websitecarbon.com/website/giovannifoppiani-github-io/" target="_blank">Web Carbon Calculator</a> this web-page emits only 0.19g of CO2, 5 times less than sending a typical email.</p>
+                        <p>Last update: 18/09/2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle functionality for the About section
+        const toggleButton = document.getElementById('aboutToggle');
+        const aboutContent = document.getElementById('aboutContent');
+        
+        toggleButton.addEventListener('click', () => {
+            aboutContent.classList.toggle('active');
+            
+            // Change button text based on state
+            if (aboutContent.classList.contains('active')) {
+                toggleButton.innerHTML = '<span>Read less</span>';
+            } else {
+                toggleButton.innerHTML = '<span>Read more</span>';
+            }
+        });
+        
+        // Filter functionality for projects
+        document.addEventListener("DOMContentLoaded", () => {
+            const navItems = document.querySelectorAll(".navbar ul li");
+            const rows = document.querySelectorAll("tbody tr");
+            
+            navItems.forEach(item => {
+                item.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent page scrolling
+                    
+                    navItems.forEach(nav => nav.classList.remove("active"));
+                    item.classList.add("active"); // Add active class to clicked filter
+                    
+                    const filter = item.getAttribute("data-filter");
+                    
+                    rows.forEach(row => {
+                        const categories = row.getAttribute("data-category").split(", ");
+                        if (filter === "all" || categories.includes(filter)) {
+                            row.style.display = "table-row"; // Show matching rows
+                        } else {
+                            row.style.display = "none"; // Hide non-matching rows
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

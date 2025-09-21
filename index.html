@@ -176,7 +176,8 @@
         }
         
         .publication-section a::before {
-            content: "^";
+            content: "↗";
+            background-color: black;
             position: absolute;
             left: -10px;
             top: 50%;
@@ -609,11 +610,11 @@
             <nav class="navbar">
                 <ul>
                     <li class="active" data-filter="all"><a href="#">All</a></li>
-                    <li data-filter="Digital"><a href="#">Communication</a></li>
-                    <li data-filter="Editorial"><a href="#">Editorial</a></li>
-                    <li data-filter="Photography"><a href="#">Photography</a></li>
-                    <li data-filter="Ecology"><a href="#">Sustainability</a></li>
-                    <li data-filter="Workshop"><a href="#">Workshop</a></li>
+                    <li class="toggle-button" data-filter="Digital"><a href="#">Communication</a></li>
+                    <li class="toggle-button" data-filter="Editorial"><a href="#">Editorial</a></li>
+                    <li class="toggle-button" data-filter="Photography"><a href="#">Photography</a></li>
+                    <li class="toggle-button" data-filter="Ecology"><a href="#">Sustainability</a></li>
+                    <li class="toggle-button" data-filter="Workshop"><a href="#">Workshop</a></li>
                 </ul>
             </nav>
             

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio – Giovanni Foppiani</title>
+    <title class="site-title">Portfolio – Giovanni Foppiani</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="https://giovannifoppiani.github.io/images/gf-favicon.png">
     <style>
@@ -28,6 +28,34 @@
             background: #C9E087;
             font-weight: bold;
         }
+
+        .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.site-title {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.logo-container {
+    width: 50px;
+    height: 50px;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* optional rounded corners */
+}
+
+.logo-image {
+    max-width: 100%;
+    max-height: 100%;
+}
         
         .container {
             margin: 40px auto;
@@ -448,6 +476,14 @@
     </style>
 </head>
 <body>
+    <header class="header-container">
+          <div class="logo-container">
+            <img src="https://giovannifoppiani.github.io/images/gf-favicon.png" 
+                 alt="Logo" 
+                 class="logo-image">
+        </div>
+    </header>
+    
     <div class="container">
         <!-- About Section -->
         <div class="about-section">

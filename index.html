@@ -38,10 +38,108 @@
     align-items: center;
 
 }
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
 
+.hamburger-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    padding: 0;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.hamburger-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000000;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 20px;
+    min-width: 250px;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.hamburger-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hamburger-dropdown p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #bbbbbb;
+}
+
+.hamburger-dropdown a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.hamburger-dropdown a:hover {
+    color: #C9E087;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.hamburger-dropdown .divider {
+    margin: 0 5px;
+}
+
+/* Responsive adjustments for hamburger menu */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .hamburger-dropdown {
+        width: 85vw;
+        right: 0;
+        left: auto;
+    }
+}
 .title {
     margin: 0;
-    font-family: serif;
+    font-family: sans-serif;
 }
 
 .logo-container {
@@ -103,7 +201,7 @@
         
         hr {
             border: 0.5px solid #444444;
-            margin: 15px 0;
+            margin: 5px 0;
         }
         
         .about-section .description {
@@ -114,7 +212,7 @@
             margin-bottom: 15px;
         }
 
-          .about-section .description, .about-section .toggle-button a{
+          .description .toggle-button a{
               text-decoration: underline;
             text-decoration-style: dotted;
             text-decoration-color: #C9E087;
@@ -192,6 +290,7 @@
         .publication-section .title { 
             font-style: italic; 
             display: inline;
+            font-family: sans-serif;
         }
         
         .publication-section .divider { 
@@ -532,6 +631,25 @@
                  class="logo-image">
         </div>
     </header>
+
+            <!-- Hamburger Menu -->
+<div class="hamburger-menu">
+    <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="hamburger-dropdown" id="hamburgerDropdown">
+        <div class="contact-details">
+            <p><strong>ORCID:</strong> 0009-0008-3784-2451</p>
+            <p><strong>EMAIL:</strong> GIOVANNI.FOPPIANI@LUT.FI</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/___gio.va/" target="_blank">INSTAGRAM</a>
+                <a href="https://www.linkedin.com/in/giovanni-foppiani/" target="_blank">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
+</div>
             <p class="title">Giovanni Foppiani</p>
             <p class="subtitle">Communication designer & PhD researcher</p>
             <hr>
@@ -877,7 +995,67 @@ As a designer, he developed a low-carbon digital platform designed to minimize c
             </div>
         </div>
     </div>
+    <script>
+    // Toggle functionality for the About section
+    const toggleButton = document.getElementById('aboutToggle');
+    const aboutContent = document.getElementById('aboutContent');
     
+    toggleButton.addEventListener('click', () => {
+        aboutContent.classList.toggle('active');
+        
+        // Change button text based on state
+        if (aboutContent.classList.contains('active')) {
+            toggleButton.innerHTML = '<span>Read less</span>';
+        } else {
+            toggleButton.innerHTML = '<span>Read more</span>';
+        }
+    });
+    
+    // Filter functionality for projects
+    document.addEventListener("DOMContentLoaded", () => {
+        const navItems = document.querySelectorAll(".navbar ul li");
+        const rows = document.querySelectorAll("tbody tr");
+        
+        navItems.forEach(item => {
+            item.addEventListener("click", (event) => {
+                event.preventDefault(); // Prevent page scrolling
+                
+                navItems.forEach(nav => nav.classList.remove("active"));
+                item.classList.add("active"); // Add active class to clicked filter
+                
+                const filter = item.getAttribute("data-filter");
+                
+                rows.forEach(row => {
+                    const categories = row.getAttribute("data-category").split(", ");
+                    if (filter === "all" || categories.includes(filter)) {
+                        row.style.display = "table-row"; // Show matching rows
+                    } else {
+                        row.style.display = "none"; // Hide non-matching rows
+                    }
+                });
+            });
+        });
+    });
+
+    // Hamburger menu functionality
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const hamburgerDropdown = document.getElementById('hamburgerDropdown');
+
+    if (hamburgerBtn && hamburgerDropdown) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            hamburgerDropdown.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburgerBtn.contains(e.target) && !hamburgerDropdown.contains(e.target)) {
+                hamburgerBtn.classList.remove('active');
+                hamburgerDropdown.classList.remove('active');
+            }
+        });
+    }
+</script>
     <script>
         // Toggle functionality for the About section
         const toggleButton = document.getElementById('aboutToggle');

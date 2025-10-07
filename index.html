@@ -84,10 +84,9 @@
     top: 100%;
     right: 0;
     background-color: #000000;
-    border: 1px solid #444444;
-    border-radius: 5px;
-    padding: 20px;
-    min-width: 250px;
+    border-top: 2px solid #ffffff;
+    padding: 0;
+    min-width: 200px;
     margin-top: 10px;
     opacity: 0;
     visibility: hidden;
@@ -101,27 +100,28 @@
     transform: translateY(0);
 }
 
-.hamburger-dropdown p {
-    margin-bottom: 15px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #bbbbbb;
-}
-
 .hamburger-dropdown a {
+    display: block;
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #444444;
+    transition: all 0.3s ease;
+}
+
+.hamburger-dropdown a:last-child {
+    border-bottom: none;
 }
 
 .hamburger-dropdown a:hover {
     color: #C9E087;
     text-decoration: underline;
     text-decoration-style: dotted;
-}
-
-.hamburger-dropdown .divider {
-    margin: 0 5px;
+    text-decoration-color: #C9E087;
+    background-color: rgba(201, 224, 135, 0.05);
 }
 
 /* Responsive adjustments for hamburger menu */
@@ -136,6 +136,8 @@
         right: 0;
         left: auto;
     }
+}
+        
 }
 .title {
     margin: 0;
@@ -632,7 +634,7 @@
         </div>
     </header>
 
-            <!-- Hamburger Menu 
+          <!-- Hamburger Menu -->
 <div class="hamburger-menu">
     <button class="hamburger-btn" id="hamburgerBtn">
         <span></span>
@@ -640,17 +642,12 @@
         <span></span>
     </button>
     <div class="hamburger-dropdown" id="hamburgerDropdown">
-        <div class="contact-details">
-            <p><strong>ORCID:</strong> 0009-0008-3784-2451</p>
-            <p><strong>EMAIL:</strong> GIOVANNI.FOPPIANI@LUT.FI</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/___gio.va/" target="_blank">INSTAGRAM</a>
-                <a href="https://www.linkedin.com/in/giovanni-foppiani/" target="_blank">LINKEDIN</a>
-            </div>
-        </div>
+        <a href="#about">ABOUT</a>
+        <a href="#publications">PUBLICATIONS</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contacts">CONTACTS</a>
     </div>
 </div>
-       -->
             <p class="title">Giovanni Foppiani</p>
             <p class="subtitle">Communication designer & PhD researcher</p>
             <hr>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Foppiani</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="https://giovannifoppiani.github.io/images/gf-favicon.png">
+    <link rel="icon" type="image/png" href="https://giovannifoppiani.github.io/images/Wireframe - 11.png">
     <style>
         /* General Reset */
         body, ul, li, table, th, td {
@@ -227,44 +227,68 @@
             transform: translateY(-50%) translateX(-3px);
         }
         
-        /* Navbar */
-        .navbar {
-            background-color: #000000;
-            text-align: left;
-        }
-        
-        .navbar ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .navbar li {
-            list-style: none;
-        }
-        
-        .navbar a {
-            font-size: 14px;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px;
-            transition: color 0.3s ease;
-        }
-        
-        .navbar .active a {
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-        
-        .navbar a:hover {
-            color: black;
-            background: color: rgba(201, 224, 135, 0.1);
-            border-radius: 30px;
-            transition: color 0.3s ease;
-        }
+     /* Navbar - Filter Tags */
+.navbar {
+    background-color: #000000;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar a {
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.navbar .active a {
+    background-color: rgba(201, 224, 135, 0.1);
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    background-color: rgba(201, 224, 135, 0.15);
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 6px;
+    }
+    
+    .navbar a {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar ul {
+        gap: 10px;
+    }
+    
+    .navbar a {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
         
         /* Table Styling */
         .table-container {

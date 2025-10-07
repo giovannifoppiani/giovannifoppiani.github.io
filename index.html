@@ -973,7 +973,11 @@ As a designer, he developed a low-carbon digital platform designed to minimize c
                                ORCID <a href="https://orcid.org/0009-0008-3784-2451" target="_blank" target="_blank">0009-0008-3784-2451</a>
                           <br> <br>
                               ↗  <a href="https://www.instagram.com/___gio.va/" target="_blank">INSTAGRAM</a> •  ↗  <a href="https://www.linkedin.com/in/giovanni-foppiani/" target="_blank">LINKEDIN</a> •     <p><a href="#">↑↑ BACK TO TOP ↑↑</a></p>
-                        
+                          <br>
+                           <p>PLEASE NOTE:</p>
+                        <p>This is not my official portfolio but rather a web-repository of lost-and-found links of my work.</p>
+                        <p>According to <a href="https://www.websitecarbon.com/website/giovannifoppiani-github-io/" target="_blank">Web Carbon Calculator</a> this web-page emits only 0.19g of CO2, 5 times less than sending a typical email.</p>
+                        <p>Last update: 8/10/2025</p>
                              
                         </div>
                     </div>
@@ -981,7 +985,7 @@ As a designer, he developed a low-carbon digital platform designed to minimize c
                 
                 <div class="note-section">
                     <div class="note">
-                         <p><a href="#">↑↑ BACK TO TOP ↑↑</a></p>
+                         <p><a href="#">BACK TO TOP ↑↑</a></p>
                            <br>
                            <br>
                         <p>PLEASE NOTE:</p>
@@ -994,6 +998,7 @@ As a designer, he developed a low-carbon digital platform designed to minimize c
         </div>
     </div>
     <script>
+  <script>
     // Toggle functionality for the About section
     const toggleButton = document.getElementById('aboutToggle');
     const aboutContent = document.getElementById('aboutContent');
@@ -1008,6 +1013,52 @@ As a designer, he developed a low-carbon digital platform designed to minimize c
             toggleButton.innerHTML = '<span>Read more</span>';
         }
     });
+    
+    // Filter functionality for projects
+    document.addEventListener("DOMContentLoaded", () => {
+        const navItems = document.querySelectorAll(".navbar ul li");
+        const rows = document.querySelectorAll("tbody tr");
+        
+        navItems.forEach(item => {
+            item.addEventListener("click", (event) => {
+                event.preventDefault(); // Prevent page scrolling
+                
+                navItems.forEach(nav => nav.classList.remove("active"));
+                item.classList.add("active"); // Add active class to clicked filter
+                
+                const filter = item.getAttribute("data-filter");
+                
+                rows.forEach(row => {
+                    const categories = row.getAttribute("data-category").split(", ");
+                    if (filter === "all" || categories.includes(filter)) {
+                        row.style.display = "table-row"; // Show matching rows
+                    } else {
+                        row.style.display = "none"; // Hide non-matching rows
+                    }
+                });
+            });
+        });
+    });
+
+    // Hamburger menu functionality
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const hamburgerDropdown = document.getElementById('hamburgerDropdown');
+
+    if (hamburgerBtn && hamburgerDropdown) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            hamburgerDropdown.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburgerBtn.contains(e.target) && !hamburgerDropdown.contains(e.target)) {
+                hamburgerBtn.classList.remove('active');
+                hamburgerDropdown.classList.remove('active');
+            }
+        });
+    }
+</script>
     
     // Filter functionality for projects
     document.addEventListener("DOMContentLoaded", () => {

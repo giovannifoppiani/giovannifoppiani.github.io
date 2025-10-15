@@ -21,10 +21,12 @@
 
           /* Color coding */
         :root {
-  --primary: #var(--primary);
-  --secondary: #var(#000000);      
+  --primary: var(--primary);
+  --secondary: var(#000000);      
   --accent: #C9E087;
--- dark-accent: #CFD6BA;
+    -- dark-accent: #CFD6BA;
+     --grey : #CFD6BA;
+        }
         
         /* Body Styling */
         body {
@@ -70,7 +72,7 @@
     display: block;
     height: 2px;
     width: 100%;
-    background-color: #var(--primary);
+    background-color: #var(--secondary);
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -91,7 +93,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     border-top: 2px solid #var(--primary);
     padding: 0;
     min-width: 200px;
@@ -129,7 +131,7 @@
     text-decoration: underline;
     text-decoration-style: dotted;
     text-decoration-color: var(--accent);
-    background-color: var(--accent);
+    background-color: var(--secondary);
 }
 
 /* Responsive adjustments for hamburger menu */
@@ -325,13 +327,13 @@
         
         .publication-section a::before {
           /*   content: "↗";
-            background-color: black; */
+            background-color: var (--secondary); */
             position: absolute;
             left: -10px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 12px;
-            color: #var(--primary);
+            color: var(--primary);
             opacity: 0;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
@@ -343,7 +345,7 @@
         
      /* Navbar - Filter Tags */
 .navbar {
-    background-color: #var(--secondary)0;
+    background-color: var(--secondary);
     text-align: left;
     margin-bottom: 20px;
 }
@@ -367,19 +369,19 @@
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--dark-accent);
     transition: all 0.3s ease;
     display: inline-block;
 }
 
 .navbar .active a {
     color: brown;
-    background-color: rgba(201, 224, 135, 0.15);
+    background-color: var(--dark-accent);
     outline-color: brown;
 }
 
 .navbar a:hover {
-    background-color: rgba(201, 224, 135, 0.15);
+    background-color: var(--dark-accent);
 }
 
 /* Mobile-first responsive adjustments */
@@ -414,7 +416,7 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            color: #bbbbbb;
+            color: var(--background);
         }
         
         thead th {

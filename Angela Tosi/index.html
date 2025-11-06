@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Angela Tosi - Ceramica Creativa. Artista ceramista a Bivigliano (FI). Tornio, decorazione, tecnica Raku e laboratori creativi.">
+    <title>Angela Tosi - Ceramica Creativa</title>
+    <style>
+        :root {
+            /* Exact colors from screenshots */
+            --blue-header: #6997cb;
+            --rust-text: #b27d5d;
+            --background: #f3f3f3;
+            --teal-dot: #6cd8c1;
+            --purple-dot: #b298c8;
+            --lightblue-dot: #94c5e8;
+            --divider: #d0d0d0;
+            --photo-bg: #f5e6d3;
+            
+            /* Typography */
+            --font-family-base: "Times New Roman", Times, serif;
+        }
+
+        
+        /* Base styles - Mobile First */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-family: var(--font-family-base);
+            background-color: var(--background);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        /* Header */
+        header {
+            padding: 30px 20px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .site-title {
+            margin-bottom: 0;
+        }
+        
+        .header-title {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        /* Dropdown Menu */
+        .menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--background);
+            padding: 30px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu.active {
+            display: block;
+        }
+        
+        .menu-item {
+            font-family: var(--font-family-base);
+            font-size: 20px;
+            color: var(--rust-text);
+            padding: 12px 0;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s ease;
+        }
+        
+        .menu-item:hover {
+            text-decoration: underline;
+        }
+        
+        .menu-item.active {
+            color: var(--blue-header);
+            font-weight: bold;
+        }
+        
+        .title-main {
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--blue-header);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+        
+        .title-sub {
+            font-size: 24px;
+            font-weight: normal;
+            color: var(--blue-header);
+            line-height: 1.1;
+            margin: 5px 0 0 0;
+        }
+        
+        /* Main content area */
+        main {
+            padding: 0 20px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Bio Section */
+        .bio-divider {
+            height: 1px;
+            background-color: var(--divider);
+            margin: 30px 0;
+            border: none;
+        }
+        
+        .bio-section {
+            margin-bottom: 40px;
+        }
+        
+        .bio-heading {
+            color: var(--rust-text);
+            font-size: 22px;
+            font-weight: normal;
+            margin: 0 0 15px 0;
+        }
+        
+        .bio-text {
+            color: var(--rust-text);
+            font-size: 17px;
+            line-height: 1.7;
+            margin: 0 0 25px 0;
+        }
+        
+        .bio-image {
+            width: 100%;
+        }
+        
+        .bio-img {
+            background-color: var(--photo-bg);
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 3/4;
+            border-radius: 20px;
+        }
+        
+        .section-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Content grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        /* Content sections */
+        .content-card {
+            margin-bottom: 0;
+        }
+        
+        .section-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--rust-text);
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 1.3;
+            margin: 0 0 15px 0;
+        }
+        
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+        
+        .content-card p {
+            color: var(--rust-text);
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 15px 0 20px 0;
+        }
+        
+        .outlined-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 2px solid var(--blue-header);
+            border-radius: 25px;
+            background: transparent;
+            color: var(--rust-text);
+            font-size: 16px;
+            font-weight: normal;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .outlined-btn:hover {
+            background-color: var(--blue-header);
+            color: #ffffff;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 30px 20px;
+            border-top: 1px solid var(--divider);
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 15px;
+            color: var(--rust-text);
+        }
+        
+        .footer-content a {
+            color: var(--rust-text);
+        }
+        
+        .footer-content a:hover {
+            color: var(--blue-header);
+        }
+        
+        /* Desktop layout */
+        @media (min-width: 768px) {
+            header {
+                text-align: center;
+                padding: 40px 20px 0;
+            }
+            
+            .title-main {
+                font-size: 32px;
+            }
+            
+            .title-sub {
+                font-size: 24px;
+            }
+            
+            main {
+                padding: 0 20px 30px;
+            }
+            
+            /* Three equal columns for content sections */
+            .content-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            
+            footer {
+                padding: 30px 20px;
+            }
+            
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* Accessibility */
+        :focus-visible {
+            outline: 2px solid var(--blue-header);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="site-title header-title" id="headerTitle">
+            <h1 class="title-main">Angela Tosi</h1>
+            <p class="title-sub">ceramica creativa</p>
+        </div>
+        
+        <!-- Dropdown Menu -->
+        <nav class="menu" id="dropdownMenu">
+            <a href="#home" class="menu-item" data-section="home">Home</a>
+            <a href="#tornio" class="menu-item" data-section="tornio">Tornio e decorazione</a>
+            <a href="#ricerca" class="menu-item" data-section="ricerca">Ricerca e sperimentazione</a>
+            <a href="#laboratorio" class="menu-item" data-section="laboratorio">Laboratorio creativo</a>
+            <a href="https://www.instagram.com" class="menu-item" data-section="instagram" target="_blank">Instagram</a>
+        </nav>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main>
+        <!-- Bio Section -->
+        <hr class="bio-divider">
+        <section class="bio-section">
+            <h2 class="bio-heading">Angela Tosi ceramica creativa</h2>
+            <p class="bio-text">Angela Tosi è una artista con base a Bivigliano (FI). Tornatrice e decoratrice di maioliche, sperimenta tecnica Raku e autoproduce smalti a basse temperature, proponendo laboratori di ceramica creativa.</p>
+            <div class="bio-image">
+                <div class="bio-img" aria-label="Angela Tosi working on ceramic pieces"></div>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <!-- Section 1: Tornio e decorazione -->
+            <article class="content-card">
+                <div class="section-image" style="background: linear-gradient(135deg, #7fc7af 0%, #a0dbc9 100%);"></div>
+                <h3 class="section-heading">
+                    <span class="dot" style="background-color: var(--teal-dot);"></span>
+                    Tornio e decorazione
+                </h3>
+                <p>L'argilla rossa, lavorata fin dai tempi del liceo artistico, è un materiale irrinunciabile. Lo smalto bianco (e la pittura soprasmalto), rende le sue ceramiche impermeabili e utilizzabili quotidianamente. L'oggetto è ideato in maniera unitaria, partendo dalla creazione al tornio e scegliendo la decorazione in modo che essa accompagni e valorizzi la forma. Partendo dalla tecnica tradizionale (a cui ritorna sempre volentieri), ha sviluppato decori originali e uno stile essenziale.</p>
+                <a href="#ceramicheria" class="outlined-btn">→ Ceramicheria</a>
+            </article>
+            
+            <!-- Section 2: Ricerca e sperimentazione -->
+            <article class="content-card">
+                <div class="section-image" style="background: linear-gradient(135deg, #a37fc4 0%, #c4a8d9 100%);"></div>
+                <h3 class="section-heading">
+                    <span class="dot" style="background-color: var(--purple-dot);"></span>
+                    Ricerca e sperimentazione tecniche raku e terre naturali
+                </h3>
+                <p>Utilizzando terre refrattarie, engobbi e cristalline, sperimenta la tecnica raku, amata soprattutto per il contatto diretto col fuoco, e gli effetti metallici e craquelé.</p>
+                <a href="#ricerca" class="outlined-btn">→ Ricerca</a>
+            </article>
+            
+            <!-- Section 3: Laboratorio creativo -->
+            <article class="content-card">
+                <div class="section-image" style="background: linear-gradient(135deg, #7eb8df 0%, #a8d0f0 100%);"></div>
+                <h3 class="section-heading">
+                    <span class="dot" style="background-color: var(--lightblue-dot);"></span>
+                    Laboratorio creativo
+                </h3>
+                <p>Laboratorio di ceramica per bambini e adulti. Mette a disposizione materiali e competenze in modo che ogni allievo sia seguito individualmente per lo sviluppo del proprio lavoro, che deve rispettare, prima di tutto, l'identità e la creatività di chi lo realizza.</p>
+                <a href="#laboratorio" class="outlined-btn">→ Laboratorio</a>
+            </article>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <span>Angela Tosi ceramica creativa</span>
+            <span>© 2025</span>
+            <a href="https://www.instagram.com" target="_blank">→ Instagram</a>
+        </div>
+    </footer>
+    
+    <script>
+        // Dropdown menu functionality
+        const headerTitle = document.getElementById('headerTitle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        // Toggle menu on header click
+        headerTitle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('active');
+        });
+        
+        // Handle menu item clicks
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Don't prevent default for external links
+                if (!this.hasAttribute('target')) {
+                    e.preventDefault();
+                }
+                
+                // Remove active class from all items
+                menuItems.forEach(menuItem => {
+                    menuItem.classList.remove('active');
+                });
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Optional: Close menu after selection (comment out to keep open)
+                // dropdownMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!headerTitle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+        
+        // Set Home as active by default
+        document.querySelector('.menu-item[data-section="home"]').classList.add('active');
+    </script>
+</body>
+</html>

@@ -1,260 +1,258 @@
-{
-  "projects": [
-    {
-      "year": 2025,
-      "title": "3km Deep - Sonic exploration",
-      "url": "https://www.designacademy.nl/page/8952/3km-deep",
-      "discipline": "Aerial footage, Photography",
-      "collaboration": "Emma Zerial, Design Academy Eindhoven",
-      "categories": ["Photography", "Digital"]
-    },
-    {
-      "year": 2025,
-      "title": "Unaforesta - The art of circular design",
-      "url": "https://leonardoplebani.com/unaforesta",
-      "discipline": "Creative direction, Photography",
-      "collaboration": "Leonardo Plebani",
-      "categories": ["Photography", "Digital"]
-    },
-    {
-      "year": 2025,
-      "title": "Amplify Social Initiatives",
-      "url": "",
-      "discipline": "Co-design workshop",
-      "collaboration": "Universitá Iuav di Venezia",
-      "categories": ["Workshop"]
-    },
-    {
-      "year": 2025,
-      "title": "The impact of the internet",
-      "url": "https://www.graphicdays.it/neologia/the-impact-of-the-internet-giovanni-foppiani/",
-      "discipline": "Editorial",
-      "collaboration": "Graphic Days Torino",
-      "categories": ["Editorial"]
-    },
-    {
-      "year": 2024,
-      "title": "Nessi. Appunti per l'ecosistema dell'università",
-      "url": "https://doi.org/10.57623/979-12-5953-191-9",
-      "discipline": "Editorial",
-      "collaboration": "Gianni Sinni, Irene Sgarro",
-      "categories": ["Editorial"]
-    },
-    {
-      "year": 2024,
-      "title": "Balkan bike trip",
-      "url": "https://blog.veloplus.ch/2024/09/05/eine-velotour-voller-ueberraschungen/",
-      "discipline": "Photography",
-      "collaboration": "elsewhere, Veloplus",
-      "categories": ["Photography", "Outdoor"]
-    },
-    {
-      "year": 2024,
-      "title": "WDW Workshop: Design per l'emergenza",
-      "url": "https://ctrljunk.github.io/design-emergenza/index.html",
-      "discipline": "Workshop",
-      "collaboration": "Università Iuav di Venezia",
-      "categories": ["Workshop"]
-    },
-    {
-      "year": 2024,
-      "title": "Modello web per imprese sociali",
-      "url": "https://luav.unifind.cineca.it/individual?uri=http%3A%2F%2Firises.luav.it%2Fresource%2Fproject%2FPRJ-0381",
-      "discipline": "Digital platform",
-      "collaboration": "Università Iuav di Venezia",
-      "categories": ["Digital", "Workshop"]
-    },
-    {
-      "year": 2024,
-      "title": "Waste driven UI",
-      "url": "https://ctrljunk.github.io/digital/ctrljunk.html",
-      "discipline": "Workshop",
-      "collaboration": "CTRL+JUNK LAB, Università Iuav di Venezia",
-      "categories": ["Workshop"]
-    },
-    {
-      "year": 2024,
-      "title": "Communicare la sostenibilità",
-      "url": "",
-      "discipline": "Communication, Workshop",
-      "collaboration": "Studio Visuale, Fondazione IUAV",
-      "categories": ["Workshop"]
-    },
-    {
-      "year": 2024,
-      "title": "Criticity sustainable platform",
-      "url": "https://www.criticity.org",
-      "discipline": "Web design, UX/UI",
-      "collaboration": "Criticity",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2023,
-      "title": "Corte te",
-      "url": "https://www.criticity.org/corte-te/",
-      "discipline": "Workshop",
-      "collaboration": "Criticity",
-      "categories": ["Workshop"]
-    },
-    {
-      "year": 2023,
-      "title": "Urban parasitism",
-      "url": "https://www.criticity.org/san-gottardo-book-crossing/",
-      "discipline": "Workshop",
-      "collaboration": "Criticity",
-      "categories": ["Workshop"]
-    },
-    {
-      "year": 2022,
-      "title": "get lost, elsewhere",
-      "url": "https://www.youtube.com/channel/UC8-g4fZgo0qd9PkLScb7_nA",
-      "discipline": "Digital video, Photography",
-      "collaboration": "Founder",
-      "categories": ["Digital", "Photography"]
-    },
-    {
-      "year": 2021,
-      "title": "Thijs Verhaar.nl",
-      "url": "https://www.thijsverhaar.nl/",
-      "discipline": "Web design",
-      "collaboration": "Knitwear Lab (NL)",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2021,
-      "title": "Out of blue",
-      "url": "https://www.instagram.com/stories/highlights/18112004125431303/",
-      "discipline": "Digital knitting",
-      "collaboration": "Knitwear Lab (NL)",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2021,
-      "title": "Iisalmi Nature campus",
-      "url": "https://github.com/giovannifoppiani/giovannifoppiani.github.io/edit/main/index.html",
-      "discipline": "Branding",
-      "collaboration": "Savonia University (FI)",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2021,
-      "title": "Sperimentale. Pratico. Interdisciplinare.",
-      "url": "https://www.isiadesign.fi.it/",
-      "discipline": "Digital video",
-      "collaboration": "ISIA Firenze",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2021,
-      "title": "Flexible Visual Identity: ISIA Student Show",
-      "url": "",
-      "discipline": "Branding",
-      "collaboration": "ISIA Firenze",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2021,
-      "title": "Best waste, no waste",
-      "url": "",
-      "discipline": "Service design",
-      "collaboration": "Alia Toscana, ISIA Firenze",
-      "categories": []
-    },
-    {
-      "year": 2021,
-      "title": "Dubhe Album Art cover",
-      "url": "",
-      "discipline": "Art cover",
-      "collaboration": "NotMe",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2021,
-      "title": "P.O.G.O.",
-      "url": "https://www.instagram.com/pogo.pogo.pogo._/",
-      "discipline": "Art cover",
-      "collaboration": "-",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2020,
-      "title": "Don't consider it waste.",
-      "url": "https://vimeo.com/709097224?share=copy#t=0",
-      "discipline": "Digital video, Photography",
-      "collaboration": "Rifo-Lab",
-      "categories": ["Digital", "Photography"]
-    },
-    {
-      "year": 2020,
-      "title": "No Black Friday • Do we really need it?",
-      "url": "https://www.instagram.com/p/CHz2PBAM8HX/?igshid=xx53e6wv2xhu",
-      "discipline": "Digital campaign",
-      "collaboration": "Rifo-Lab",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2020,
-      "title": "Recycled clothes - EP.1, EP.2, EP.3",
-      "url": "https://www.youtube.com/watch?v=44fg6_G_PtQ",
-      "discipline": "Digital video, Photography",
-      "collaboration": "Rifo-Lab, Museo del tessuto",
-      "categories": ["Digital", "Photography"]
-    },
-    {
-      "year": 2020,
-      "title": "Sagra Sonora Festival",
-      "url": "https://www.instagram.com/sagrasonora/",
-      "discipline": "Event design",
-      "collaboration": "Comune di Vaglia, Flash Operatori",
-      "categories": ["Digital"]
-    },
-    {
-      "year": 2020,
-      "title": "Etichetta trasparente",
-      "url": "https://docs.google.com/presentation/d/1hVKOWEvmhIRRG41ipSzRnXcskL_48ogW1_9cgQi9mq4/edit?usp=sharing",
-      "discipline": "Branding",
-      "collaboration": "Oxfam Italia",
-      "categories": ["Editorial"]
-    },
-    {
-      "year": 2020,
-      "title": "There is no plan bee",
-      "url": "https://www.behance.net/gallery/93907567/THERE-IS-NO-PLAN-BEE-BA-thesis-editorial-project",
-      "discipline": "Editorial",
-      "collaboration": "Fondazione Eni Enrico Mattei",
-      "categories": ["Editorial"]
-    },
-    {
-      "year": 2020,
-      "title": "Bauhaus100",
-      "url": "https://www.behance.net/gallery/86523811/Graphic-Tribute-to-Lyonel-Feininger",
-      "discipline": "Editorial",
-      "collaboration": "ISIA Firenze",
-      "categories": ["Editorial"]
-    },
-    {
-      "year": 2019,
-      "title": "FLOG",
-      "url": "https://www.behance.net/gallery/86677567/AIDA-a-storytelling-of-a-live-show",
-      "discipline": "Photography",
-      "collaboration": "Aida band",
-      "categories": ["Photography"]
-    },
-    {
-      "year": 2019,
-      "title": "Comunicare l'economia",
-      "url": "https://www.behance.net/gallery/93838899/Broken-Economy-Comunicare-Ieconomia",
-      "discipline": "Editorial",
-      "collaboration": "ISIA Firenze",
-      "categories": ["Editorial"]
-    },
-    {
-      "year": 2019,
-      "title": "JotTheDate app",
-      "url": "https://www.behance.net/gallery/30223261/JotTheDate-Handwritten-Calendar-App",
-      "discipline": "App, Digital",
-      "collaboration": "iStartApp",
-      "categories": ["Digital"]
-    }
-  ]
-}
+[
+  {
+    "year": 2025,
+    "title": "3km Deep",
+    "url": "https://www.designacademy.nl/page/8952/3km-deep",
+    "discipline": "Aerial footage",
+    "collaboration": "Emma Zerial, Design Academy Eindhoven",
+    "categories": ["Photography", "Outdoor"]
+  },
+  {
+    "year": 2025,
+    "title": "Unaforesta - The art of circular design",
+    "url": "https://leonardoplebani.com/unaforesta",
+    "discipline": "Creative upcycling",
+    "collaboration": "Leonardo Plebani",
+    "categories": ["Digital", "Photography"]
+  },
+  {
+    "year": 2025,
+    "title": "Amplify Social Initiatives",
+    "url": "",
+    "discipline": "Co-design workshop",
+    "collaboration": "Universitá Iuav di Venezia",
+    "categories": ["Workshop"]
+  },
+  {
+    "year": 2025,
+    "title": "The impact of the internet",
+    "url": "https://www.graphicdays.it/neologia/the-impact-of-the-internet-giovanni-foppiani/",
+    "discipline": "Editorial",
+    "collaboration": "Graphic Days Torino",
+    "categories": ["Editorial"]
+  },
+  {
+    "year": 2024,
+    "title": "Nessi. Appunti per l'ecosistema dell'università",
+    "url": "https://doi.org/10.57623/979-12-5953-191-9",
+    "discipline": "Editorial",
+    "collaboration": "Gianni Sinni, Irene Sgarro",
+    "categories": ["Editorial"]
+  },
+  {
+    "year": 2024,
+    "title": "Balkan bike trip",
+    "url": "https://blog.veloplus.ch/2024/09/05/eine-velotour-voller-ueberraschungen/",
+    "discipline": "Photography",
+    "collaboration": "elsewhere, Veloplus",
+    "categories": ["Photography", "Outdoor"]
+  },
+  {
+    "year": 2024,
+    "title": "WDW Workshop: Design per l'emergenza",
+    "url": "https://ctrljunk.github.io/design-emergenza/index.html",
+    "discipline": "Workshop",
+    "collaboration": "Università Iuav di Venezia",
+    "categories": ["Ecology", "Workshop"]
+  },
+  {
+    "year": 2024,
+    "title": "Modello web per imprese sociali",
+    "url": "https://luav.unifind.cineca.it/individual?uri=http%3A%2F%2Firises.luav.it%2Fresource%2Fproject%2FPRJ-0381",
+    "discipline": "Digital platform",
+    "collaboration": "Università Iuav di Venezia",
+    "categories": ["Digital", "Workshop"]
+  },
+  {
+    "year": 2024,
+    "title": "Waste driven UI",
+    "url": "https://ctrljunk.github.io/digital/ctrljunk.html",
+    "discipline": "Workshop",
+    "collaboration": "CTRL+JUNK LAB, Università Iuav di Venezia",
+    "categories": ["Ecology", "Workshop"]
+  },
+  {
+    "year": 2024,
+    "title": "Communicare la sostenibilità",
+    "url": "",
+    "discipline": "Communication, Workshop",
+    "collaboration": "Studio Visuale, Fondazione IUAV",
+    "categories": ["Workshop"]
+  },
+  {
+    "year": 2024,
+    "title": "Criticity sustainable platform",
+    "url": "https://www.criticity.org",
+    "discipline": "Web design, UX/UI",
+    "collaboration": "Criticity",
+    "categories": ["Ecology", "Digital"]
+  },
+  {
+    "year": 2023,
+    "title": "Corte te",
+    "url": "https://www.criticity.org/corte-te/",
+    "discipline": "Workshop",
+    "collaboration": "Criticity",
+    "categories": ["Workshop"]
+  },
+  {
+    "year": 2023,
+    "title": "Urban parasitism",
+    "url": "https://www.criticity.org/san-gottardo-book-crossing/",
+    "discipline": "Workshop",
+    "collaboration": "Criticity",
+    "categories": ["Workshop"]
+  },
+  {
+    "year": 2022,
+    "title": "get lost, elsewhere",
+    "url": "https://www.youtube.com/channel/UC8-g4fZgo0qd9PkLScb7_nA",
+    "discipline": "Digital video, Photography",
+    "collaboration": "Founder",
+    "categories": ["Digital", "Photography"]
+  },
+  {
+    "year": 2021,
+    "title": "Thijs Verhaar.nl",
+    "url": "https://www.thijsverhaar.nl/",
+    "discipline": "Web design",
+    "collaboration": "Knitwear Lab (NL)",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2021,
+    "title": "Out of blue",
+    "url": "https://www.instagram.com/stories/highlights/18112004125431303/",
+    "discipline": "Digital knitting",
+    "collaboration": "Knitwear Lab (NL)",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2021,
+    "title": "Iisalmi Nature campus",
+    "url": "https://github.com/giovannifoppiani/giovannifoppiani.github.io/edit/main/index.html",
+    "discipline": "Branding",
+    "collaboration": "Savonia University (FI)",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2021,
+    "title": "Sperimentale. Pratico. Interdisciplinare.",
+    "url": "https://www.isiadesign.fi.it/",
+    "discipline": "Digital video",
+    "collaboration": "ISIA Firenze",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2021,
+    "title": "Flexible Visual Identity: ISIA Student Show",
+    "url": "",
+    "discipline": "Branding",
+    "collaboration": "ISIA Firenze",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2021,
+    "title": "Best waste, no waste",
+    "url": "",
+    "discipline": "Service design",
+    "collaboration": "Alia Toscana, ISIA Firenze",
+    "categories": ["Ecology", "Service"]
+  },
+  {
+    "year": 2021,
+    "title": "Dubhe Album Art cover",
+    "url": "",
+    "discipline": "Art cover",
+    "collaboration": "NotMe",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2021,
+    "title": "P.O.G.O.",
+    "url": "https://www.instagram.com/pogo.pogo.pogo._/",
+    "discipline": "Art cover",
+    "collaboration": "-",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2020,
+    "title": "Don't consider it waste.",
+    "url": "https://vimeo.com/709097224?share=copy#t=0",
+    "discipline": "Digital video, Photography",
+    "collaboration": "Rifo-Lab",
+    "categories": ["Digital", "Photography"]
+  },
+  {
+    "year": 2020,
+    "title": "No Black Friday • Do we really need it?",
+    "url": "https://www.instagram.com/p/CHz2PBAM8HX/?igshid=xx53e6wv2xhu",
+    "discipline": "Digital campaign",
+    "collaboration": "Rifo-Lab",
+    "categories": ["Ecology", "Digital"]
+  },
+  {
+    "year": 2020,
+    "title": "Recycled clothes - EP.1 EP.2 EP.3",
+    "url": "https://www.youtube.com/watch?v=44fg6_G_PtQ",
+    "discipline": "Digital video, Photography",
+    "collaboration": "Rifo-Lab, Museo del tessuto",
+    "categories": ["Digital", "Photography"]
+  },
+  {
+    "year": 2020,
+    "title": "Sagra Sonora Festival",
+    "url": "https://www.instagram.com/sagrasonora/",
+    "discipline": "Event design",
+    "collaboration": "Comune di Vaglia, Flash Operatori",
+    "categories": ["Digital"]
+  },
+  {
+    "year": 2020,
+    "title": "Etichetta trasparente",
+    "url": "https://docs.google.com/presentation/d/1hVKOWEvmhIRRG41ipSzRnXcskL_48ogW1_9cgQi9mq4/edit?usp=sharing",
+    "discipline": "Branding",
+    "collaboration": "Oxfam Italia",
+    "categories": ["Editorial"]
+  },
+  {
+    "year": 2020,
+    "title": "There is no plan bee",
+    "url": "https://www.behance.net/gallery/93907567/THERE-IS-NO-PLAN-BEE-BA-thesis-editorial-project",
+    "discipline": "Editorial",
+    "collaboration": "Fondazione Eni Enrico Mattei",
+    "categories": ["Ecology", "Editorial"]
+  },
+  {
+    "year": 2020,
+    "title": "Bauhaus100",
+    "url": "https://www.behance.net/gallery/86523811/Graphic-Tribute-to-Lyonel-Feininger",
+    "discipline": "Editorial",
+    "collaboration": "ISIA Firenze",
+    "categories": ["Editorial"]
+  },
+  {
+    "year": 2019,
+    "title": "FLOG",
+    "url": "https://www.behance.net/gallery/86677567/AIDA-a-storytelling-of-a-live-show",
+    "discipline": "Photography",
+    "collaboration": "Aida band",
+    "categories": [""]
+  },
+  {
+    "year": 2019,
+    "title": "Comunicare l'economia",
+    "url": "https://www.behance.net/gallery/93838899/Broken-Economy-Comunicare-Ieconomia",
+    "discipline": "Editorial",
+    "collaboration": "ISIA Firenze",
+    "categories": ["Editorial"]
+  },
+  {
+    "year": 2019,
+    "title": "JotTheDate app",
+    "url": "https://www.behance.net/gallery/30223261/JotTheDate-Handwritten-Calendar-App",
+    "discipline": "App, Digital",
+    "collaboration": "iStartApp",
+    "categories": ["Digital"]
+  }
+]

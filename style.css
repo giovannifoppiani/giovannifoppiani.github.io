@@ -1,1 +1,28 @@
+/* Global overflow fix */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
+/* Intro images: prevent horizontal overflow and create a responsive grid */
+.intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.intro img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Table responsiveness: wrap in scroll container on small screens */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-container table {
+  min-width: 600px;
+}

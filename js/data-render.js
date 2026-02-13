@@ -2,21 +2,23 @@
 async function loadPublications() {
     try {
         const response = await fetch('data/publications.json');
-        const data = await response.json();
-        const pubList = document.querySelector('.publication-section ul');
+        const publications = await response.json();
+        const publicationsList = document.getElementById('publications-list');
         
-        pubList.innerHTML = data.publications.map(pub => {
-            const titleHtml = pub.url 
+        if (!publicationsList) return;
+        
+        publicationsList.innerHTML = publications.map(pub => {
+            const titleLink = pub.url 
                 ? `<a href="${pub.url}" target="_blank" class="title">${pub.title}</a>` 
                 : `<span class="title">${pub.title}</span>`;
             
-            const noteHtml = pub.note ? ` ${pub.note}` : '';
+            const note = pub.note ? ` ${pub.note}` : '';
             
             return `
                 <li>
                     <span class="author">${pub.authors} (${pub.year}).</span>
-                    ${titleHtml}
-                    ${pub.venue}${noteHtml}
+                    ${titleLink}
+                    ${pub.venue}${note}
                     <div class="divider"></div>
                 </li>
             `;
@@ -30,19 +32,22 @@ async function loadPublications() {
 async function loadProjects() {
     try {
         const response = await fetch('data/projects.json');
-        const data = await response.json();
-        const tbody = document.querySelector('.table-container tbody');
+        const projects = await response.json();
+        const projectsTable = document.getElementById('projects-table');
         
-        tbody.innerHTML = data.projects.map(project => {
-            const categories = project.categories.join(', ');
-            const titleHtml = project.url 
+        if (!projectsTable) return;
+        
+        projectsTable.innerHTML = projects.map(project => {
+            const titleLink = project.url 
                 ? `<a href="${project.url}" target="_blank">${project.title}</a>` 
                 : project.title;
+            
+            const categories = project.categories.join(', ');
             
             return `
                 <tr data-category="${categories}">
                     <td>${project.year}</td>
-                    <td>${titleHtml}</td>
+                    <td>${titleLink}</td>
                     <td>${project.discipline}</td>
                     <td>${project.collaboration}</td>
                 </tr>
@@ -56,10 +61,10 @@ async function loadProjects() {
     }
 }
 
-// Initialize filter functionality
+// Initialize filter functionality for projects
 function initializeFilters() {
     const navItems = document.querySelectorAll(".navbar ul li");
-    const rows = document.querySelectorAll("tbody tr");
+    const rows = document.querySelectorAll("#projects-table tr");
     
     navItems.forEach(item => {
         item.addEventListener("click", (event) => {
@@ -82,7 +87,7 @@ function initializeFilters() {
     });
 }
 
-// Load data when page loads
+// Load both when page loads
 document.addEventListener('DOMContentLoaded', () => {
     loadPublications();
     loadProjects();

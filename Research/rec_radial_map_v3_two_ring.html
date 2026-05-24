@@ -1,0 +1,155 @@
+
+<h2 class="sr-only">Interactive two-ring radial map of Regenerative Energy Commons showing inner regenerative dimensions and outer design science principles</h2>
+<div style="padding: 1rem 0;">
+<div style="display: flex; gap: 24px; align-items: flex-start;">
+<div style="width: 260px; min-width: 260px; font-size: 12.5px; line-height: 1.55; color: var(--color-text-secondary);">
+  <p style="font-size: 18px; font-weight: 500; color: var(--color-text-primary); line-height: 1.2; margin-bottom: 4px;">Designing regenerating energy commons</p>
+  <p style="font-size: 12px; margin-bottom: 14px; opacity: 0.7;">Giovanni Foppiani &middot; DC 10 &middot; Energy Mobility Systems</p>
+  <p style="margin-bottom: 12px;">The Regenerative Energy Commons are purposeful and intertwined ecosystems weaving relationships among human and non-human actors to actively enhance aliveness toward net positive outcomes for planetary and societal wellbeing through poly-centric and co-managed energy system configurations.</p>
+  <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; margin-bottom: 4px; opacity: 0.6;">PhD research</p>
+  <p style="margin-bottom: 10px; font-size: 11.5px;">This research operates from a Design Science standpoint, conceiving energy systems at the nexus of <em>socio-technical transitions</em> (Geels) and <em>socio-ecological systems</em> (Ostrom) — proposing them as commons platforms where energy functions as social currency.</p>
+  <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; margin-bottom: 4px; opacity: 0.6;">Scoping review</p>
+  <p style="font-size: 11.5px;">39 articles &middot; Anchor / Core / Root tiers</p>
+  <div id="detail-panel" style="margin-top: 16px; padding: 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); font-size: 11px; min-height: 60px; color: var(--color-text-secondary);">Hover a node to see details. Click to highlight connections.</div>
+</div>
+<div style="flex: 1; position: relative;">
+  <canvas id="radial" style="width: 100%; cursor: pointer;"></canvas>
+  <div id="tooltip" style="position:absolute;display:none;pointer-events:none;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 14px;max-width:280px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:10;font-size:12px;color:var(--color-text-primary);line-height:1.45;"></div>
+</div>
+</div>
+</div>
+<script>
+const canvas = document.getElementById('radial');
+const ctx = canvas.getContext('2d');
+const tooltip = document.getElementById('tooltip');
+const detail = document.getElementById('detail-panel');
+const DPR = window.devicePixelRatio || 1;
+const W = 640, H = 640;
+canvas.width = W * DPR; canvas.height = H * DPR;
+canvas.style.height = H + 'px';
+ctx.scale(DPR, DPR);
+const CX = W / 2, CY = H / 2;
+const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const col = { text: isDark ? '#e0e0e0' : '#1a1a1a', ring: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)', conn: isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)', connHi: isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)', nodeFill: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.06)', nodeHi: isDark ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.2)', stroke: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.7)', strokeHi: isDark ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,1)', dimStroke: isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.15)' };
+const dimensions = [
+  {id:'vc',label:'VALUE\nCAPTURE',desc:'Multi-capital accounting, energetical currencies, post-growth viability',vault:['Konietzko et al., 2023','Levelt, 2025']},
+  {id:'va',label:'VALUE\nARCHITECTURE',desc:'Governance structures, institutional arrangements, feedback loops within energy commons',vault:['Bauwens, Wade & Burke, 2024','McGinnis & Ostrom, 2014']},
+  {id:'vd',label:'VALUE\nDELIVERY',desc:'Energy access, mobility services, ecosystem services, community benefits',vault:['Ramkumar et al., 2025','Fonseca et al., 2026']},
+  {id:'pb',label:'PLACE-\nBASED',desc:'Territorial embeddedness — each place has unique potential from its geological, ecological, cultural patterns',vault:['Mang & Reed, 2012','Dzhengiz & Patala, 2023']},
+  {id:'wvc',label:'WHOLE VALUE\nCHAIN',desc:'From mineral extraction through production to end-of-life — full material and social chain',vault:['Bauwens, Wade & Burke, 2024','OECD, 2024']},
+  {id:'ew',label:'ENERGY\nWELFARE',desc:'Energy as social right and ecological function — foundation for wellbeing and planetary health',vault:['Burke & Stephens, 2018','Petrovics & Savini, 2025']},
+  {id:'nh',label:'NON-\nHUMANS',desc:'Animals, waterways, weather, ecosystems as stakeholders with agency in energy systems',vault:['Bellato et al., 2022','Munoz & Hernandez, 2024']},
+  {id:'jf',label:'JUSTICE &\nFAIRNESS',desc:'Distributional, procedural, recognition, generative justice — capability expansion',vault:['Schleifer, 2025','Sharma et al., 2025']},
+  {id:'ls',label:'LIVING SYSTEMS\nCO-PARTNERSHIP',desc:'Co-evolutionary dynamics, biodiversity net gain, biomimetic design',vault:['Capra & Luisi, 2014','Reed, 2007']},
+  {id:'cm',label:'CO-\nMANAGEMENT',desc:'Shared governance between communities, institutions, ecosystems — polycentric, participatory',vault:['McGinnis & Ostrom, 2014','Bauwens, Wade & Burke, 2024']},
+  {id:'v2g',label:'V2G\nINTEGRATION',desc:'Vehicle-to-Grid/Building/Everything — bidirectional energy flow, mobility as grid asset',vault:['Ramkumar et al., 2025','Jiang et al., 2026']},
+  {id:'p2p',label:'PEER TO\nPEER',desc:'Distributed horizontal energy exchange — prosumer networks, community trading',vault:['Bauwens, Wade & Burke, 2024','Fonseca et al., 2026']},
+];
+const principles = [
+  {id:'vcc',label:'VALUE (CO)\nCREATION',desc:'Multi-stakeholder co-creation — nature as primary stakeholder',vault:['Konietzko et al., 2023'],links:['vc','va']},
+  {id:'ss',label:'SELF-\nSUFFICIENCY',desc:'Community energy autonomy — distributed generation, reduced dependency',vault:['Petrovics & Savini, 2025'],links:['p2p','ew']},
+  {id:'cr',label:'CLIMATE\nRESILIENCE',desc:'Capacity to absorb, adapt, transform under uncertainty — grid flexibility, redundancy',vault:['Konnola et al., 2021'],links:['v2g','vd']},
+  {id:'st',label:'STEWARDSHIP',desc:'Long-term care — intergenerational responsibility, ecological restoration',vault:['Buckton et al., 2023'],links:['nh','ls']},
+  {id:'pc',label:'POLY-\nCENTRIC',desc:'Multiple overlapping governance centers — Ostrom nested enterprises',vault:['McGinnis & Ostrom, 2014'],links:['cm','jf']},
+  {id:'ri',label:'RES\nINTEGRATION',desc:'Solar, wind, hydrogen, biomass woven into community energy systems',vault:['Ramkumar et al., 2025'],links:['v2g','vd']},
+  {id:'ce',label:'CO-\nEVOLUTION',desc:'Mutual adaptation between human and ecological systems over time',vault:['Capra & Luisi, 2014'],links:['ls','nh']},
+  {id:'mu',label:'MUTUALISM',desc:'Network of positive-sum interactions — cooperation, reciprocity, care',vault:['Buckton et al., 2023'],links:['ls','jf']},
+  {id:'cs',label:'CROSS-\nSECTORAL',desc:'Shared regenerative principles across tourism, agriculture, construction, textiles, energy',vault:['Dzhengiz & Patala, 2023'],links:['pb','wvc']},
+  {id:'te',label:'TEMPORALITY',desc:'Ecological time vs. policy cycles — reconciling urgency with deliberation',vault:['Bellato et al., 2022'],links:['cm','ew']},
+  {id:'rw',label:'RELATIONAL\nWELLBEING',desc:'Health, care, embodiment, community bonds through shared energy governance',vault:['Salonen, Ritala & Bocken, 2025'],links:['jf','ew']},
+];
+const R1 = 155, R2 = 278;
+const nodes = [];
+let selected = null, hovered = null;
+function positionNodes(){
+  nodes.length = 0;
+  dimensions.forEach((d,i)=>{
+    const a = (i/dimensions.length)*Math.PI*2 - Math.PI/2;
+    nodes.push({...d, x:CX+Math.cos(a)*R1, y:CY+Math.sin(a)*R1, r:30, layer:'dimension', _a:a});
+  });
+  principles.forEach((p,i)=>{
+    const a = (i/principles.length)*Math.PI*2 - Math.PI/2;
+    nodes.push({...p, x:CX+Math.cos(a)*R2, y:CY+Math.sin(a)*R2, r:27, layer:'principle', _a:a});
+  });
+}
+positionNodes();
+function getConns(){
+  const c=[];
+  principles.forEach(p=>{(p.links||[]).forEach(t=>{c.push({from:p.id,to:t});});});
+  return c;
+}
+const conns = getConns();
+function getNode(id){return nodes.find(n=>n.id===id);}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  [R1,R2].forEach(r=>{ctx.beginPath();ctx.arc(CX,CY,r,0,Math.PI*2);ctx.strokeStyle=col.ring;ctx.lineWidth=1;ctx.stroke();});
+  ctx.save();ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=col.text;
+  ctx.font='500 22px Helvetica Neue,Helvetica,Arial,sans-serif';
+  ctx.fillText('Regenerative',CX,CY-18);ctx.fillText('Energy',CX,CY+6);ctx.fillText('Commons',CX,CY+30);
+  ctx.restore();
+  conns.forEach(c=>{
+    const f=getNode(c.from),t=getNode(c.to);if(!f||!t)return;
+    const hi=selected&&(selected.id===c.from||selected.id===c.to);
+    ctx.beginPath();ctx.moveTo(f.x,f.y);
+    const mx=CX+(f.x+t.x-2*CX)*0.35, my=CY+(f.y+t.y-2*CY)*0.35;
+    ctx.quadraticCurveTo(mx,my,t.x,t.y);
+    ctx.strokeStyle=hi?col.connHi:col.conn;ctx.lineWidth=hi?1.8:0.8;ctx.stroke();
+  });
+  nodes.forEach(n=>{
+    const hi=selected&&(selected.id===n.id||(selected.links&&selected.links.includes(n.id))||(n.links&&n.links.includes(selected.id)));
+    const hov=hovered&&hovered.id===n.id;
+    ctx.globalAlpha=selected?(hi||selected.id===n.id?1:0.2):1;
+    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+    ctx.fillStyle=(hov||(selected&&selected.id===n.id))?col.nodeHi:col.nodeFill;ctx.fill();
+    ctx.strokeStyle=selected?(hi||selected.id===n.id?col.strokeHi:col.dimStroke):col.stroke;
+    ctx.lineWidth=(hi||hov)?2:1.2;ctx.stroke();
+    ctx.fillStyle=col.text;ctx.textAlign='center';ctx.textBaseline='middle';
+    const fs=n.layer==='dimension'?8:7.5;
+    ctx.font='600 '+fs+'px Helvetica Neue,Helvetica,Arial,sans-serif';
+    n.label.split('\n').forEach((l,j,a)=>{ctx.fillText(l,n.x,n.y+(j-(a.length-1)/2)*(fs+2.5));});
+    ctx.globalAlpha=1;
+  });
+}
+function hitTest(mx,my){
+  const rect=canvas.getBoundingClientRect();
+  const x=(mx-rect.left)*(W/rect.width),y=(my-rect.top)*(H/rect.height);
+  for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];if((x-n.x)**2+(y-n.y)**2<(n.r+4)**2)return n;}
+  return null;
+}
+canvas.addEventListener('mousemove',e=>{
+  const hit=hitTest(e.clientX,e.clientY);hovered=hit;
+  if(hit){
+    canvas.style.cursor='pointer';
+    const ln=hit.layer==='dimension'?'Inner ring — regenerative dimension':'Outer ring — design science principle';
+    let h='<div style="font-size:9px;text-transform:uppercase;letter-spacing:0.8px;opacity:0.5;margin-bottom:4px;">'+ln+'</div>';
+    h+='<div style="font-weight:500;font-size:13px;margin-bottom:3px;">'+hit.label.replace(/\n/g,' ')+'</div>';
+    h+='<div style="font-size:11.5px;">'+hit.desc+'</div>';
+    if(hit.vault&&hit.vault.length){h+='<div style="font-size:10px;color:var(--color-text-secondary);margin-top:5px;border-top:0.5px solid var(--color-border-tertiary);padding-top:4px;">'+hit.vault.map(v=>'[['+v+']]').join(', ')+'</div>';}
+    tooltip.innerHTML=h;tooltip.style.display='block';
+    const rect=canvas.parentElement.getBoundingClientRect();
+    let tx=e.clientX-rect.left+14,ty=e.clientY-rect.top-10;
+    if(tx+290>rect.width)tx=e.clientX-rect.left-294;
+    if(ty+130>rect.height)ty-=110;
+    tooltip.style.left=tx+'px';tooltip.style.top=ty+'px';
+  } else {canvas.style.cursor='default';tooltip.style.display='none';}
+  draw();
+});
+canvas.addEventListener('click',e=>{
+  const hit=hitTest(e.clientX,e.clientY);
+  if(hit){
+    selected=selected&&selected.id===hit.id?null:hit;
+    if(selected){
+      const cids=conns.filter(c=>c.from===selected.id||c.to===selected.id).map(c=>c.from===selected.id?c.to:c.from);
+      const names=cids.map(id=>{const n=getNode(id);return n?n.label.replace(/\n/g,' '):id;});
+      let d='<div style="font-weight:500;margin-bottom:4px;">'+selected.label.replace(/\n/g,' ')+'</div>';
+      d+='<div style="font-size:10.5px;">'+selected.desc+'</div>';
+      if(names.length)d+='<div style="font-size:10px;opacity:0.6;margin-top:6px;">Connected to: '+names.join(', ')+'</div>';
+      if(selected.vault)d+='<div style="font-size:10px;opacity:0.5;margin-top:4px;">'+selected.vault.map(v=>'[['+v+']]').join(', ')+'</div>';
+      detail.innerHTML=d;
+    } else {detail.innerHTML='Hover a node to see details. Click to highlight connections.';}
+  } else {selected=null;detail.innerHTML='Hover a node to see details. Click to highlight connections.';}
+  draw();
+});
+canvas.addEventListener('mouseleave',()=>{hovered=null;tooltip.style.display='none';draw();});
+draw();
+</script>

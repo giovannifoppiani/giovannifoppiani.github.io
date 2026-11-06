@@ -1,0 +1,323 @@
+/* =============================================================
+   scroll-patterns.css
+
+   Three scroll-driven behaviours, written against the CSS
+   Scroll-driven Animations spec (animation-timeline / view() /
+   scroll()). Techniques learned from Bramus Van Damme's demos
+   at scroll-driven-animations.style (Apache 2.0); the code here
+   is written from scratch for this layout.
+
+     1. Stacking cards        → #research
+     2. Cover Flow            → .flow
+     3. Reverse-scroll band   → .band
+
+   ── The one rule underneath all three ──
+   Never transform the element that establishes the scroll
+   length. Transform a child. Otherwise the scroller's own
+   dimensions change while you scroll it, and it flickers.
+
+   ── Progressive enhancement ──
+   Every animation lives inside a single @supports block.
+   This matters more than usual: a browser that does not know
+   animation-timeline drops ONLY that declaration and keeps the
+   animation, which would fire the whole thing on page load in
+   the wrong place. Keep `animation` and `animation-timeline`
+   together inside the guard, always.
+
+   Support at time of writing: Chrome/Edge since 115, Safari
+   since 26, Firefox still behind a flag. Check before shipping.
+   ============================================================= */
+
+
+/* =============================================================
+   BASE LAYER — static, correct, and good-looking with no
+   animation support at all. Everything below this section is
+   enhancement only.
+   ============================================================= */
+
+/* ---------- 1. Stacking cards (static) ---------- */
+.cards__list { display: grid; gap: clamp(1.5rem, 5vh, 3rem); }
+
+.card__content {
+  background: var(--ground);
+  color: var(--ink);
+  display: grid;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  padding: clamp(1.1rem, 3.5vw, 2rem);
+  transform-origin: 50% 0;
+}
+@media (min-width: 46rem) {
+  .card__content { grid-template-columns: 40% 1fr; align-items: start; }
+}
+
+.card__body { display: grid; gap: 0.7em; align-content: start; }
+.card__meta { font-size: var(--t-base); line-height: 1.3; opacity: 0.62; }
+.card__title {
+  font-size: var(--t-lead);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.026em;
+  max-width: 18ch;
+}
+.card__note { font-size: var(--t-base); line-height: 1.35; max-width: 34ch; opacity: 0.78; }
+.card .plate { aspect-ratio: 4 / 3; }
+@media (min-width: 46rem) { .card .plate { aspect-ratio: 4 / 5; } }
+
+/* ---------- 2. Cover Flow (static) ----------
+   With no animation support this is still a perfectly good
+   horizontal snap gallery. */
+.flow {
+  --cover: clamp(11rem, 42vw, 20rem);
+  display: flex;
+  gap: clamp(0.8rem, 3vw, 1.6rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding-block: clamp(2rem, 8vh, 5rem);
+  /* Half-viewport padding lets the first and last item reach centre. */
+  padding-inline: calc(50% - (var(--cover) / 2));
+  scrollbar-width: none;
+}
+.flow::-webkit-scrollbar { display: none; }
+
+.flow li {
+  flex: 0 0 var(--cover);
+  scroll-snap-align: center;
+  list-style: none;
+}
+.flow .plate { aspect-ratio: 1; }
+
+/* A plate you can filter has to say what it is, or the filter has
+   nothing to show for itself. */
+/* The label hangs below the plate's own line, so the row of
+   captions reads as a band rather than as four loose notes. */
+.flow__label {
+  margin-top: 0.75rem;
+  padding-top: 0.55rem;
+  border-top: var(--rule) solid currentColor;
+  font-size: var(--t-small);
+  line-height: 1.25;
+}
+.flow__label span { display: block; opacity: 0.62; }
+
+.flow__caption {
+  padding-inline: var(--edge);
+  font-size: var(--t-base);
+  opacity: 0.62;
+}
+
+
+.band__name {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.7em 0.75em;
+  font-size: var(--t-small);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  color: inherit;
+  mix-blend-mode: difference;
+  filter: invert(1) grayscale(1) contrast(2);
+}
+
+/* ---------- 3. Reverse-scroll band (static) ---------- */
+.band {
+  background: var(--ground);
+  color: var(--ink);
+  height: 100svh;
+  overflow: hidden;
+}
+.band__columns {
+  --band-h: 190%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.4rem, 1.5vw, 1rem);
+  height: 100%;
+  padding-inline: clamp(0.4rem, 1.5vw, 1rem);
+}
+.band__col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.4rem, 1.5vw, 1rem);
+  height: var(--band-h);
+}
+.band__col--reverse { flex-direction: column-reverse; }
+.band__col .plate { flex: 1 1 auto; aspect-ratio: auto; }
+
+/* On a phone the band flattens into a static two-column list.
+   Hiding the third column would silently drop five organisations,
+   so the height constraint goes instead of the content. */
+@media (max-width: 34rem) {
+  .band { height: auto; }
+  .band__columns { grid-template-columns: repeat(2, 1fr); padding-block: var(--gap); }
+  .band__col { height: auto; }
+  .band__col .plate { aspect-ratio: 1; }
+}
+
+
+/* =============================================================
+   ENHANCEMENT LAYER
+   ============================================================= */
+@supports (animation-timeline: view()) {
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ===========================================================
+     PATTERN 1 — STACKING CARDS
+
+     The wrapper declares one view-timeline. Each card claims
+     1/n of it, so card 1 finishes shrinking exactly as card 2
+     arrives. Range is exit-crossing: it runs from the moment
+     the wrapper's top edge passes the top of the viewport to
+     the moment its bottom edge does — which is precisely the
+     window in which the sticky cards are stuck.
+
+     The sticky and the scale both sit on .card__content, never
+     on .card, so the wrapper's height (the scroll estate the
+     whole effect depends on) is never touched.
+     =========================================================== */
+
+  .cards {
+    --stack-top: clamp(4.5rem, 12vh, 7rem);
+    --shrink: 0.055;          /* how much each buried card loses */
+    --peek: 0.9rem;           /* visible sliver of the card below */
+    view-timeline-name: --card-stack;
+    view-timeline-axis: block;
+  }
+
+  .cards__list { gap: 0; }
+
+  .card {
+    /* 0-based index, and a reverse index so buried cards shrink
+       more than recent ones. */
+    --i0: calc(var(--i) - 1);
+    --rev: calc(var(--n) - var(--i0));
+    min-height: 84svh;
+  }
+
+  .card__content {
+    position: sticky;
+    top: calc(var(--stack-top) + (var(--i0) * var(--peek)));
+    animation: card-settle linear forwards;
+    animation-timeline: --card-stack;
+    animation-range:
+      exit-crossing calc(var(--i0) / var(--n) * 100%)
+      exit-crossing calc(var(--i)  / var(--n) * 100%);
+  }
+
+  /* The last card never shrinks — it is the one you land on. */
+  .card:last-child .card__content { animation: none; }
+
+  @keyframes card-settle {
+    to { transform: scale(calc(1 - (var(--shrink) * (var(--rev) - 1)))); }
+  }
+
+
+  /* ===========================================================
+     PATTERN 2 — COVER FLOW
+
+     Each <li> establishes its own view-timeline on the INLINE
+     axis, tracked inside .flow. No animation-range is set, so
+     the default `cover` range applies: 0% is the moment the
+     item begins entering the scrollport, 100% the moment it has
+     fully left, and 50% is dead centre.
+
+     Two animations read that one timeline:
+       · on the li   → z-index, so the centred cover is topmost
+       · on the card → rotateY, flat only at centre
+
+     The rotation is on the child, not the li. If the li itself
+     rotated, the scroller's total length would change as you
+     scroll it and the whole thing would judder.
+
+     The face is the card, not the plate. Once a caption hangs
+     under the image, transforming the image alone tears the two
+     apart: the picture leans and scales while its own label
+     stays flat behind it.
+     =========================================================== */
+
+  /* Opt-in, not automatic. The rotation slides neighbours 92%
+     across the centred cover, which is the whole charm when the
+     covers are bare images and a disaster once they carry
+     captions: the text leans with the card and lands on top of
+     its neighbour, unreadable. A strip with captions stays flat
+     and keeps the snap. */
+  .flow--covers { perspective: 44em; }
+
+  .flow--covers li {
+    view-timeline-name: --cover-in-view;
+    view-timeline-axis: inline;
+    animation: cover-stack linear both;
+    animation-timeline: --cover-in-view;
+    transform-style: preserve-3d;
+  }
+
+  .flow--covers li > .flow__card {
+    /* Timeline names resolve up the tree, so this finds the
+       timeline declared on its parent li. */
+    animation: cover-face linear both;
+    animation-timeline: --cover-in-view;
+    will-change: transform;
+  }
+
+  @keyframes cover-stack {
+    0%   { z-index: 1; }
+    50%  { z-index: 20; }
+    100% { z-index: 1; }
+  }
+
+  @keyframes cover-face {
+    0%   { transform: translateX(-92%) rotateY(-44deg); }
+    36%  { transform: translateX(0)    rotateY(-44deg); }
+    50%  { transform: rotateY(0deg) translateZ(1.4em) scale(1.06); }
+    64%  { transform: translateX(0)    rotateY(44deg); }
+    100% { transform: translateX(92%)  rotateY(44deg); }
+  }
+
+
+  /* ===========================================================
+     PATTERN 3 — REVERSE-SCROLLING COLUMNS
+
+     The reference version drives this from the root scroller,
+     which turns the whole document into the effect. Here it is
+     bound to the band's own view-timeline instead, so the
+     opposed motion happens only while the band is on screen and
+     the rest of the page is left alone.
+
+     Columns are taller than the band; the centre travels up
+     over the band's `cover` range while the outer two travel
+     down across the same range. The band clips its overflow, so
+     nothing extends the page.
+     =========================================================== */
+
+  @media (min-width: 34.01rem) {
+
+  .band {
+    view-timeline-name: --band-in-view;
+    view-timeline-axis: block;
+  }
+
+  .band__col {
+    /* Full travel = column height minus the band height. */
+    --travel: calc(100svh - var(--band-h));
+    animation: col-down linear both;
+    animation-timeline: --band-in-view;
+    will-change: transform;
+  }
+
+  .band__col--reverse { animation-name: col-up; }
+
+  @keyframes col-down {
+    from { transform: translateY(var(--travel)); }
+    to   { transform: translateY(0); }
+  }
+
+  @keyframes col-up {
+    from { transform: translateY(0); }
+    to   { transform: translateY(var(--travel)); }
+  }
+
+  }  /* end min-width guard for the band */
+
+}
+}
+
